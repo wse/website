@@ -3,6 +3,7 @@ import Nav from '../components/nav'
 import SEO from '../components/seo'
 import Headshot from '../components/headshot'
 import styled from "styled-components"
+import '../components/layout.css'
 
 const Container = styled.div`
   margin: 380px auto 0;
