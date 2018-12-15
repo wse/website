@@ -5,13 +5,13 @@ import Nav from '../components/nav'
 
 const Container = styled.div`
   margin: 40px auto 0;
-  max-width: 800px;
+  max-width: 1000px;
 `
 
 const Layout = ({ children }) => (
   <Container>
-    <Logo />
-    <Nav />
+    <Logo centered />
+    <Nav centered />
     { children }
   </Container>
 )

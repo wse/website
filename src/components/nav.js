@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from "styled-components"
 
-const Container = styled.div`
-`
-
 const LinkList = styled.ul`
-  margin: 0;
+  text-align: ${props => props.centered ? 'center' : 'left'};
+  margin-top: ${props => props.centered ? '20px' : 0};
 `
 
 const LinkListItem = styled.li`
@@ -18,28 +16,26 @@ const LinkListItem = styled.li`
   }
 `
 
-const Nav = ({ siteTitle }) => (
-  <Container>
-    <LinkList>
-      <LinkListItem>
-        <Link to="/photography">
-          Photography
-        </Link>
-      </LinkListItem>
+const Nav = ({ siteTitle, centered }) => (
+  <LinkList centered={centered ? 1 : 0}>
+    <LinkListItem>
+      <Link to="/photography">
+        Photography
+      </Link>
+    </LinkListItem>
 
-      <LinkListItem>
-        <Link to="/book-summaries">
-          Book summaries
-        </Link>
-      </LinkListItem>
+    <LinkListItem>
+      <Link to="/book-summaries">
+        Book summaries
+      </Link>
+    </LinkListItem>
 
-      <LinkListItem>
-        <Link to="/contact">
-          Contact
-        </Link>
-      </LinkListItem>
-    </LinkList>
-  </Container>
+    <LinkListItem>
+      <Link to="/contact">
+        Contact
+      </Link>
+    </LinkListItem>
+  </LinkList>
 )
 
 Nav.propTypes = {
