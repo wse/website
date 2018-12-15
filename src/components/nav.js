@@ -14,26 +14,42 @@ const LinkListItem = styled.li`
   a {
     color: #5660ca;
   }
+  .active {
+    text-decoration: underline;
+  }
 `
+
+const isActive = ({ isCurrent }) => {
+  return isCurrent ? { className: 'active' } : null
+}
 
 const Nav = ({ siteTitle, centered }) => (
   <LinkList centered={centered ? 1 : 0}>
     <LinkListItem>
-      <Link to="/photography">
+      <Link to="/" getProps={isActive}>
+        About
+      </Link>
+    </LinkListItem>
+
+    <LinkListItem>
+      <Link to="/photography" getProps={isActive}>
         Photography
       </Link>
     </LinkListItem>
 
     <LinkListItem>
-      <Link to="/book-summaries">
+      <Link to="/book-summaries" getProps={isActive}>
         Book summaries
       </Link>
     </LinkListItem>
 
     <LinkListItem>
-      <Link to="/contact">
+      <a
+        href="mailto:nishantdania@gmail.com"
+        target="_top"
+      >
         Contact
-      </Link>
+      </a>
     </LinkListItem>
   </LinkList>
 )

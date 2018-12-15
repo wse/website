@@ -50,7 +50,7 @@ a:hover {
   outline-width: 0;
 }
 a:hover {
-  text-decoration: underline;
+  color: #747ad8;
 }
 abbr[title] {
   border-bottom: none;
@@ -276,5 +276,5 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
