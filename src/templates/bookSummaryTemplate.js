@@ -17,7 +17,12 @@ const Content = styled.div`
   margin: auto;
   margin-top: 20px;
   border-top: 1px solid;
-  padding-top: 20px;
+  padding: 20px;
+  p {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #efefef;
+  }
 `
 
 export default function Template({
