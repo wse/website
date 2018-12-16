@@ -7,6 +7,7 @@ import styled from 'styled-components'
 const Title = styled.h1`
   text-align: center;
   margin-top: 20px; 
+  margin-bottom: 20px;
 `
 
 const Author = styled.h2`
@@ -14,6 +15,7 @@ const Author = styled.h2`
 `
 
 const Content = styled.div`
+  font-family: serif;
   margin: auto;
   margin-top: 20px;
   border-top: 1px solid;

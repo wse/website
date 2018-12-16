@@ -13,13 +13,17 @@ const SummariesContainer = styled.ul`
   padding: 20px;
 `
 
+const BookListItem = styled.li`
+  margin-bottom: 20px;
+`
+
 const BookSummariesPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
   const Summaries = edges.map((edge) => {
-    return <li key={edge.node.id}><PostLink key={edge.node.id} post={edge.node} /></li>
+    return <BookListItem key={edge.node.id}><PostLink key={edge.node.id} post={edge.node} /></BookListItem>
   })
   return <Layout>
     <SEO title="Book Summaries" keywords={['developer', 'photography', 'software', 'books']} />
