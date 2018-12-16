@@ -10,6 +10,7 @@ const PageDescription = styled.p`
 
 const SummariesContainer = styled.ul`
   margin-top: 20px;
+  padding: 20px;
 `
 
 const BookSummariesPage = ({
@@ -18,7 +19,7 @@ const BookSummariesPage = ({
   },
 }) => {
   const Summaries = edges.map((edge) => {
-    return <li><PostLink key={edge.node.id} post={edge.node} /></li>
+    return <li key={edge.node.id}><PostLink key={edge.node.id} post={edge.node} /></li>
   })
   return <Layout>
     <SEO title="Book Summaries" keywords={['developer', 'photography', 'software', 'books']} />

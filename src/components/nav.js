@@ -6,6 +6,9 @@ import styled from "styled-components"
 const LinkList = styled.ul`
   text-align: ${props => props.centered ? 'center' : 'left'};
   margin-top: ${props => props.centered ? '20px' : 0};
+  @media (max-width: 800px) {
+    text-align: center;
+  }
 `
 
 const LinkListItem = styled.li`
