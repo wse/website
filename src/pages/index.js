@@ -76,7 +76,7 @@ const IndexPage = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              Tradegecko
+              TradeGecko
             </a>
           </strong>
           . Ex&nbsp;
