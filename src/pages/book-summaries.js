@@ -15,6 +15,7 @@ const SummariesContainer = styled.ul`
 
 const BookListItem = styled.li`
   margin-bottom: 20px;
+  color: #5660ca;
 `
 
 const BookSummariesPage = ({
