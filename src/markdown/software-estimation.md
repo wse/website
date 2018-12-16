@@ -7,7 +7,7 @@ bookAuthor: "Steve McConnell"
 
 Estimation should be treated as an unbiased, analytical process; planning should be treated as a biased, goal-seeking process.
 
-In 1986, Professors S.D. Conte, H.E. Dunsmore, and V.Y. Shen proposed that a god estimation approach should provide estimates that are within 25% of the actual results 75% of the time.
+In 1986, Professors S.D. Conte, H.E. Dunsmore, and V.Y. Shen proposed that a good estimation approach should provide estimates that are within 25% of the actual results 75% of the time.
 
 The CMM (Capability Maturity Model) is a system defined by the Software Engineering Institute to assess the effectiveness of software organizations.
 
