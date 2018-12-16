@@ -31,7 +31,7 @@ const UpperSection = styled.section`
 
 const IndexPage = () => (
   <Container>
-    <SEO title="Home | Nishant Dania" keywords={['developer', 'photography', 'software', 'books']} />
+    <SEO title="About" keywords={['developer', 'photography', 'software', 'books']} />
     <UpperSection>
       <Headshot />
       <DescriptionSection>

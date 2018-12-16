@@ -54,7 +54,7 @@ const InstagramSlug = () => (
 
 const PhotographyPage = () => (
   <Layout>
-    <SEO title="Photography | Nishant Dania" keywords={['developer', 'photography', 'software', 'books']} />
+    <SEO title="Photography" keywords={['developer', 'photography', 'software', 'books']} />
     <GridContainer>
       <InstaGrid />
     </GridContainer>

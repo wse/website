@@ -31,5 +31,13 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/markdown`,
+        name: "markdown-pages",
+      },
+    },
+    'gatsby-transformer-remark',
   ],
 }
