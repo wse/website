@@ -28,8 +28,8 @@ const Link = styled.a`
   color: #ffffff;
   border-bottom: 4px solid white;
   :hover {
+    color: #ffffff;
     border-bottom-color: #000000;
-    
   }
   @media (max-width: 800px) {
     align-self: flex-start;
