@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../components/logo'
 import styled from "styled-components"
 import Nav from '../components/nav'
+import Subscribe from '../components/subscribe'
 
 const Container = styled.div`
   margin: 40px auto 0;
@@ -14,6 +15,7 @@ const Layout = ({ children }) => (
     <Logo centered />
     <Nav centered />
     { children }
+    <Subscribe />
   </Container>
 )
 
