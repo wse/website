@@ -1,48 +1,39 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from '../components/layout'
+import styled from 'styled-components'
 
-import { MetaData } from '../components/common/meta'
+const Title = styled.h1`
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
 
-/**
-* Single post view (/:slug)
-*
-* This file renders a single post and loads all the content.
-*
-*/
-const Post = ({ data, location }) => {
-  const post = data.ghostPost
+const Content = styled.div`
+  font-family: serif;
+  margin: auto;
+  margin-top: 20px;
+  border-top: 1px solid;
+  padding: 20px;
+`
+
+export default function Post({
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const post = data.ghostPost // data.markdownRemark holds our post data
+  const { title, html } = post;
 
   return (
-    <>
-      <MetaData
-        data={data}
-        location={location}
-        type="article"
+    <Layout>
+      <Title>
+        {title}
+      </Title>
+      <Content
+        dangerouslySetInnerHTML={{ __html: html }}
       />
-      <h1 className="content-title">{post.title}</h1>
-
-      {/* The main post content */ }
-      <section
-        className="content-body load-external-scripts"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-    </>
+    </Layout>
   )
 }
-
-Post.propTypes = {
-  data: PropTypes.shape({
-    ghostPost: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      html: PropTypes.string.isRequired,
-      feature_image: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-  location: PropTypes.object.isRequired,
-}
-
-export default Post
 
 export const query = graphql`
   query($slug: String!) {
