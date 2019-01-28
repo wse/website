@@ -5,22 +5,15 @@ import styled from "styled-components"
 const BookName = styled.p`
   font-size: 16px;  
 `
-const Author = styled.p`
-  font-size: 16px;
-`
-
 const BlockLink = styled(Link)`
   display: block;
 `
 
-const PostLink = ({ post }) => (
-  <BlockLink to={post.frontmatter.path}>
+const PostLink = ({ post, link }) => (
+  <BlockLink to={link}>
     <BookName>
-      {post.frontmatter.title}
+      {post.title}
     </BookName>
-    <Author>
-      by {post.frontmatter.bookAuthor}
-    </Author>
   </BlockLink>
 )
 
