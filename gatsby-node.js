@@ -12,6 +12,7 @@ exports.createPages = ({ graphql, actions }) => {
    */
   const createPosts = new Promise((resolve, reject) => {
     const postTemplate = path.resolve(`./src/templates/post.js`);
+    const bookSummaryTemplate = path.resolve(`./src/templates/book-summary.js`);
     resolve(
       graphql(`
         {
@@ -43,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
           if (node.primary_tag && node.primary_tag.name === 'Book Summary') {
             createPage({
               path: `/book-summaries/${node.slug}/`,
-              component: path.resolve(postTemplate),
+              component: path.resolve(bookSummaryTemplate),
               context: {
                 slug: node.slug,
               },
