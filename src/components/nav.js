@@ -35,6 +35,12 @@ const Nav = ({ siteTitle, centered }) => (
     </LinkListItem>
 
     <LinkListItem>
+      <Link to="/blog" getProps={isActive}>
+        Blog
+      </Link>
+    </LinkListItem>
+
+    <LinkListItem>
       <Link to="/photography" getProps={isActive}>
         Photography
       </Link>
