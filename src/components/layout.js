@@ -10,12 +10,23 @@ const Container = styled.div`
   padding: 0 20px;
 `
 
+const Footer = styled.div`
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  color: #777777;
+  padding: 20px;
+`
+
 const Layout = ({ children }) => (
   <Container>
     <Logo centered />
     <Nav centered />
     { children }
     <Subscribe />
+    <Footer>
+      . . ...always be learning... . .
+    </Footer>
   </Container>
 )
 
