@@ -44,7 +44,7 @@ Post.propTypes = {
 
 export default Post
 
-export const postQuery = graphql`
+export const query = graphql`
   query($slug: String!) {
     ghostPost(slug: { eq: $slug }) {
       ...GhostPostFields
