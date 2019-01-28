@@ -1,0 +1,10 @@
+{
+  "development": {
+    "apiUrl": "https://ghost.nishantdania.com",
+    "contentApiKey": "ed7201c0616825157bb1798d8e"
+  },  
+  "production": {
+    "apiUrl": "https://gatsby.ghost.io",
+    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+  }
+}
