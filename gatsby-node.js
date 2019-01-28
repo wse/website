@@ -42,7 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
         _.forEach(items, ({ node }) => {
           if (node.primary_tag && node.primary_tag.name === 'Book Summary') {
             createPage({
-              path: `/book-summary/${node.slug}/`,
+              path: `/book-summaries/${node.slug}/`,
               component: path.resolve(postTemplate),
               context: {
                 slug: node.slug,
