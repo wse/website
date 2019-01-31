@@ -2,14 +2,20 @@ import React from 'react'
 import styled from "styled-components"
 
 const BlogLinkContainer = styled.div`
-  font-size: 1rem;
-  font-weight: 800; 
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: 400;
   padding-top: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  text-transform: uppercase;
-  max-width: 640px;
+  border: 4px solid #e8e8e8;
+  border-radius: 4px;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: -8px 8px 0px #000000;
+  margin-bottom: 4rem;
+  margin-left: 1rem;
 `
 
 const BlogLink = styled.span`
@@ -28,12 +34,6 @@ const Arrow = styled.div`
     margin-left: 10px;
 `
 
-const YellowBorder = styled.div`
-  border-bottom: 8px solid black;
-  box-shadow: 4px -4px 0 #FBFF03;
-  margin-top: 0.5rem;
-`
-
 const VisitBlogLink = () => (
   <BlogLinkContainer>
     <BlogLink>
@@ -42,7 +42,6 @@ const VisitBlogLink = () => (
     <ArrowContainer>
       <Arrow />
     </ArrowContainer>
-    <YellowBorder />
   </BlogLinkContainer>
 )
 
