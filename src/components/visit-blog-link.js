@@ -5,7 +5,7 @@ const BlogLinkContainer = styled.div`
   font-size: 1rem;
   font-weight: 800; 
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
   padding-right: 1rem;
   padding-left: 1rem;
   text-transform: uppercase;
@@ -13,7 +13,7 @@ const BlogLinkContainer = styled.div`
 `
 
 const BlogLink = styled.span`
-  pointer: cursor;
+  cursor: pointer;
 `
 
 const ArrowContainer = styled.div`
