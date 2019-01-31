@@ -7,11 +7,12 @@ import VisitBlogLink from '../components/visit-blog-link'
 import SectionHeader from '../components/section-header'
 import SneakPic from '../components/sneak-pic'
 import EmailLink from '../components/email-link'
+import SocialLinks from '../components/social-links'
+import Footer from '../components/footer'
 
 const Container = styled.div`
   max-width: 850px;
   margin: auto;
-  padding-bottom: 300px;
 `
 
 const Nav = styled.div`
@@ -30,6 +31,8 @@ const HomePage = () => (
     <SectionHeader header="For a quick reply" />
     <EmailLink />
     <SectionHeader header="On other channels" />
+    <SocialLinks />
+    <Footer />
   </Container>
 )
 
