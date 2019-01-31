@@ -6,6 +6,7 @@ import Hero from '../components/hero'
 import VisitBlogLink from '../components/visit-blog-link'
 import SectionHeader from '../components/section-header'
 import SneakPic from '../components/sneak-pic'
+import EmailLink from '../components/email-link'
 
 const Container = styled.div`
   max-width: 850px;
@@ -27,6 +28,7 @@ const HomePage = () => (
     <SectionHeader header="From my camera" />
     <SneakPic />
     <SectionHeader header="For a quick reply" />
+    <EmailLink />
     <SectionHeader header="On other channels" />
   </Container>
 )
