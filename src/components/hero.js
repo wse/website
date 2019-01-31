@@ -11,13 +11,17 @@ const WhoAmI = styled.div`
   padding-bottom: 2rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  color: #5d5d5d;
+  span {
+    color: black;
+  }
 `
 
 const Hero = () => (
   <WhoAmI>
-    I’m Nishant Dania,<br />
-    a software developer
-    from India currently based in Singapore.
+    I’m <span>Nishant Dania</span>,<br />
+    a <span>software developer</span>&nbsp;
+    from India currently based in <span>Singapore</span>.
   </WhoAmI>
 )
 
