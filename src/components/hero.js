@@ -21,7 +21,7 @@ const Hero = () => (
   <WhoAmI>
     I’m <span>Nishant Dania</span>,<br />
     a <span>software developer</span>&nbsp;
-    from India currently based in <span>Singapore</span>.
+    from India based in <span>Singapore</span>.
   </WhoAmI>
 )
 
