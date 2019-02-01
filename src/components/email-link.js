@@ -4,8 +4,6 @@ import styled from "styled-components"
 const Text = styled.div`
   font-size: 0.7rem;
   font-weight: 600; 
-  padding-right: 1rem;
-  padding-left: 1rem;
 `
 
 const Link = styled.a`

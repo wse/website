@@ -9,7 +9,6 @@ const Ham = styled.div`
 `
 
 const Hamburger = () => (
-
   <Ham>
     &#9776;
   </Ham>

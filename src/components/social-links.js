@@ -11,7 +11,6 @@ const Square = styled.div`
   width: 40px;
   height: 40px;
   overflow: hidden;
-  margin: 0 10px 20px;
 `
 
 const SocialLinks = () => (

@@ -4,71 +4,43 @@ import React from 'react'
 import styled from "styled-components"
 
 const LinkList = styled.ul`
-  text-align: ${props => props.centered ? 'center' : 'left'};
-  margin-top: ${props => props.centered ? '20px' : 0};
-  @media (max-width: 800px) {
-    text-align: center;
-  }
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
 `
 
 const LinkListItem = styled.li`
   display: inline-block;
-  margin-right: 10px;
   a {
-    color: #5660ca;
+    color: #000;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
   }
   .active {
-    text-decoration: underline;
+    display: none;
   }
 `
 
-const isActive = ({ isCurrent }) => {
-  return isCurrent ? { className: 'active' } : null
+const isPartiallyActive = ({ isPartiallyCurrent }) => {
+  return isPartiallyCurrent ? { className: 'active' } : null
 }
 
-const Nav = ({ siteTitle, centered }) => (
-  <LinkList centered={centered ? 1 : 0}>
+const Nav = ({ location }) => (
+  <LinkList>
     <LinkListItem>
-      <Link to="/" getProps={isActive}>
-        About
+      <Link to="/" getProps={isPartiallyActive}>
+        Nishant Dania 
       </Link>
     </LinkListItem>
 
     <LinkListItem>
-      <Link to="/blog" getProps={isActive}>
+      <Link to="/blog" getProps={isPartiallyActive}>
         Blog
       </Link>
     </LinkListItem>
-
-    <LinkListItem>
-      <Link to="/photography" getProps={isActive}>
-        Photography
-      </Link>
-    </LinkListItem>
-
-    <LinkListItem>
-      <Link to="/book-summaries" getProps={isActive}>
-        Book summaries
-      </Link>
-    </LinkListItem>
-
-    <LinkListItem>
-      <a
-        href="mailto:nishantdania@gmail.com"
-        target="_top"
-      >
-        Contact
-      </a>
-    </LinkListItem>
   </LinkList>
 )
-
-Nav.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Nav.defaultProps = {
-  siteTitle: 'Nishant Dania',
-}
 
 export default Nav 

@@ -14,8 +14,6 @@ const BlogLinkContainer = styled.div`
   max-width: 360px;
   text-align: center;
   box-shadow: -8px 8px 0px #000000;
-  margin-bottom: 4rem;
-  margin-left: 1rem;
 `
 
 const BlogLink = styled.span`
