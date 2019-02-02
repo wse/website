@@ -4,7 +4,7 @@ module.exports = {
   postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
   siteTitleMeta: `Nishant Dania`, // This allows an alternative site title for meta data for pages.
-  siteDescriptionMeta: `Personal website of Nishant Dania`, // This allows an alternative site description for meta data for pages.
+  siteDescriptionMeta: `Product, tech and life in general`, // This allows an alternative site description for meta data for pages.
 
   shareImage: `/images/share-image.jpeg`, // fallback image for meta data. Will be used, when no post/tag/author image specified. 1200x1200 is recommended
   shareImageWidth: 800, // Change to the width of your default share image
