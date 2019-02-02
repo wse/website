@@ -32,7 +32,10 @@ const Text = styled.p`
 
 const HomePage = ({ location }) => (
   <Container>
-    <MetaData location={location}/>
+    <MetaData
+      location={location}
+      title="About"
+    />
     <Nav/ > 
     <Hero />
     <LatestPost />

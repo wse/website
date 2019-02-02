@@ -53,6 +53,7 @@ const BlogPage = ({
     <MetaData
       location={location}
       data={data}
+      title="Blog"
     />
     <Nav />
     <PageDescription>
