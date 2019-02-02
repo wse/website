@@ -1,20 +1,60 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from '../components/layout'
 import styled from 'styled-components'
 
+import Nav from '../components/nav'
+import Footer from '../components/footer'
+
+const Container = styled.div`
+  max-width: 850px;
+  margin: auto;
+`
+
+const Header = styled.div`
+  margin: 4rem 1rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 800px) {
+    margin: 4rem 2rem;
+    margin-bottom: 2rem;
+  }
+`
+
 const Title = styled.h1`
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
 `
 
 const Content = styled.div`
+  margin: 2rem 1rem;
+  margin-bottom: 4rem;
   font-family: serif;
-  margin: auto;
-  margin-top: 20px;
-  border-top: 1px solid;
-  padding: 20px;
+  line-height: 2rem;
+
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  p {
+    margin-top: 1rem; 
+    margin-bottom: 1rem; 
+  }
+
+  @media (max-width: 800px) {
+    margin: 2rem;
+  }
+`
+
+const Date = styled.div`
+  color: #a2a2a2;
+  font-size: 0.7rem;
+  display: inline-block;
+`
+
+const Tag = styled.div`
+  display: inline-block;
+  color: #a2a2a2;
+  font-size: 0.7rem;
+  margin: 0 1rem;
 `
 
 export default function Post({
@@ -24,14 +64,24 @@ export default function Post({
   const { title, html } = post;
 
   return (
-    <Layout>
-      <Title>
-        {title}
-      </Title>
+    <Container>
+      <Nav />
+      <Header>
+        <Date>
+          {post.published_at_pretty} 
+        </Date>
+        <Tag>
+           {post.primary_tag && post.primary_tag.name}
+        </Tag>
+        <Title>
+          {title}
+        </Title>
+      </Header>
       <Content
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </Layout>
+      <Footer />
+    </Container>
   )
 }
 
