@@ -11,7 +11,6 @@ const LinkList = styled.ul`
 
 const LinkListItem = styled.li`
   display: inline-block;
-  margin-left: 1rem;
   a {
     color: #000;
     letter-spacing: 0.1rem;
@@ -20,13 +19,19 @@ const LinkListItem = styled.li`
     font-weight: 600;
     font-family: -apple-system-headline,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
+
   .active {
     display: none;
+    margin-left: 0; 
+  }
+
+  .inactive {
+    margin-left: 1rem;
   }
 `
 
 const isActive = ({ isCurrent }) => {
-  return isCurrent ? { className: 'active' } : null
+  return isCurrent ? { className: 'active' } : { className: 'inactive' }
 }
 
 const Nav = ({ location }) => (
