@@ -11,6 +11,7 @@ const LinkList = styled.ul`
 
 const LinkListItem = styled.li`
   display: inline-block;
+  margin-left: 1rem;
   a {
     color: #000;
     letter-spacing: 0.1rem;
@@ -24,20 +25,20 @@ const LinkListItem = styled.li`
   }
 `
 
-const isPartiallyActive = ({ isPartiallyCurrent }) => {
-  return isPartiallyCurrent ? { className: 'active' } : null
+const isActive = ({ isCurrent }) => {
+  return isCurrent ? { className: 'active' } : null
 }
 
 const Nav = ({ location }) => (
   <LinkList>
     <LinkListItem>
-      <Link to="/" getProps={isPartiallyActive}>
-        Nishant Dania 
+      <Link to="/" getProps={isActive}>
+        About 
       </Link>
     </LinkListItem>
 
     <LinkListItem>
-      <Link to="/blog" getProps={isPartiallyActive}>
+      <Link to="/blog" getProps={isActive}>
         Blog
       </Link>
     </LinkListItem>

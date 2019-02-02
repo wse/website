@@ -1,21 +1,38 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import styled from 'styled-components'
-import PostLink from '../components/post-link'
 
-const PageDescription = styled.p`
-  margin-top: 20px;
+import PostLink from '../components/post-link'
+import Nav from '../components/nav'
+import Footer from '../components/footer'
+
+const Container = styled.div`
+  max-width: 850px;
+  margin: auto;
+`
+
+const PageDescription = styled.h1`
+  line-height: 2rem;
+  margin: 4rem 1rem;
+
+  @media (max-width: 800px) {
+    margin: 4rem 2rem;
+  }
 `
 
 const PostsContainer = styled.ul`
-  margin-top: 20px;
-  padding: 20px;
+  margin: 2rem 1rem;
+  margin-bottom: 6rem;
+
+  @media (max-width: 800px) {
+    margin: 2rem;
+    margin-bottom: 5rem;
+  }
 `
 
 const BlogListItem = styled.li`
-  margin-bottom: 20px;
-  color: #5660ca;
+  display: block;
+  margin: 2rem 0rem;
 `
 
 const BlogPage = ({
@@ -23,22 +40,22 @@ const BlogPage = ({
 }) => {
   const posts = data.allGhostPost.edges;
 
-  let blogPosts = posts.filter((post) => {
-    let primary_tag = post.node.primary_tag
-    return !(primary_tag && primary_tag.name === 'Book Summary');
-  });
-  
-  const Posts = blogPosts.map((post) => {
+  const Posts = posts.map((post) => {
     let link = `/blog/${post.node.slug}`
     return <BlogListItem key={post.node.id}>
             <PostLink link={link} key={post.node.id} post={post.node} />
       </BlogListItem>
   })
-  return <Layout>
+  return <Container>
+    <Nav />
+    <PageDescription>
+      Blog Posts
+    </PageDescription>
     <PostsContainer>
       {Posts}
     </PostsContainer>
-  </Layout>
+    <Footer />
+  </Container>
 }
 
 export default BlogPage 
@@ -46,7 +63,7 @@ export default BlogPage
 export const pageQuery = graphql`
   query {
     allGhostPost(
-      sort: { order: ASC, fields: published_at }
+      sort: { order: DESC, fields: published_at }
     ) {
       edges {
         node {
@@ -56,6 +73,7 @@ export const pageQuery = graphql`
           primary_tag {
             name
           }
+          published_at(formatString: "DD MMMM, YYYY")
         }
       }
     }
