@@ -68,15 +68,15 @@ export default function Post({
     <Container>
       <Nav />
       <Header>
+        <Title>
+          {title}
+        </Title>
         <Date>
           {post.published_at_pretty} 
         </Date>
         <Tag>
            {post.primary_tag && post.primary_tag.name}
         </Tag>
-        <Title>
-          {title}
-        </Title>
       </Header>
       <Content
         dangerouslySetInnerHTML={{ __html: html }}
