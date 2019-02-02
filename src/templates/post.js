@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import '../components/layout.css'
+import { MetaData } from '../components/common/meta'
 
 const Container = styled.div`
   max-width: 850px;
@@ -60,12 +61,17 @@ const Tag = styled.div`
 
 export default function Post({
   data, // this prop will be injected by the GraphQL query below.
+  location,
 }) {
   const post = data.ghostPost // data.markdownRemark holds our post data
   const { title, html } = post;
 
   return (
     <Container>
+      <MetaData
+        location={location}
+        data={data}
+      />
       <Nav />
       <Header>
         <Title>

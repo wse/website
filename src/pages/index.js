@@ -8,6 +8,7 @@ import Nav from '../components/nav'
 import LatestPost from '../components/latest-post'
 import HeroImage from '../components/hero-image'
 import '../components/layout.css'
+import { MetaData } from '../components/common/meta'
 
 const Container = styled.div`
   max-width: 850px;
@@ -29,8 +30,9 @@ const Text = styled.p`
   }
 `
 
-const HomePage = () => (
+const HomePage = ({ location }) => (
   <Container>
+    <MetaData location={location}/>
     <Nav/ > 
     <Hero />
     <LatestPost />

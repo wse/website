@@ -6,6 +6,7 @@ import PostLink from '../components/post-link'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import '../components/layout.css'
+import { MetaData } from '../components/common/meta'
 
 const Container = styled.div`
   max-width: 850px;
@@ -38,6 +39,7 @@ const BlogListItem = styled.li`
 
 const BlogPage = ({
   data,
+  location,
 }) => {
   const posts = data.allGhostPost.edges;
 
@@ -48,6 +50,10 @@ const BlogPage = ({
       </BlogListItem>
   })
   return <Container>
+    <MetaData
+      location={location}
+      data={data}
+    />
     <Nav />
     <PageDescription>
       Blog Posts
