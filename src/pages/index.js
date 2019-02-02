@@ -1,97 +1,53 @@
 import React from 'react'
-import Nav from '../components/nav'
-import Headshot from '../components/headshot'
 import styled from "styled-components"
+
+import Hero from '../components/hero'
+import Footer from '../components/footer'
+import Nav from '../components/nav'
+import LatestPost from '../components/latest-post'
+import HeroImage from '../components/hero-image'
 import '../components/layout.css'
 
 const Container = styled.div`
-  margin: 380px auto 0;
-  padding-left: 100px;
+  max-width: 850px;
+  margin: auto;
+`
+
+const Text = styled.p`
+  font-family: serif;
+  line-height: 2rem;
+  margin: 2rem 1rem;
+
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+
   @media (max-width: 800px) {
-    margin: auto;
-    padding: 20px;
+    margin: 2rem;
   }
 `
 
-const Name = styled.h1`
-  font-size: 72px;
-  font-weight: normal;
-  margin-bottom: 5px;
-  @media (max-width: 800px) {
-    font-size: 36px;
-    font-weight: bold;
-  }
-`
-const Career = styled.h2`
-  font-size: 16px;
-  font-weight: normal;
-  margin-bottom: 5px;
-  color: #5a5a5a;
-  @media (max-width: 800px) {
-    text-align: center;
-    padding: 20px;
-  }
-`
-const DescriptionSection = styled.section`
-  margin-left: 20px;
-  @media (max-width: 800px) {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`
-const UpperSection = styled.section`
-  display: flex;
-  @media (max-width: 800px) {
-    display: block;
-  }
-` 
-
-const HeadshotContainer = styled.div`
-  @media (max-width: 800px) {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-`
-
-const IndexPage = () => (
+const HomePage = () => (
   <Container>
-    <UpperSection>
-      <HeadshotContainer>
-        <Headshot />
-      </HeadshotContainer>
-      <DescriptionSection>
-        <Name>
-          Nishant Dania
-        </Name>
-        <Career>
-          Software Developer at&nbsp;
-          <strong>
-            <a 
-              href="https://www.tradegecko.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TradeGecko
-            </a>
-          </strong>
-          . Ex&nbsp;
-          <strong>
-            <a
-              href="https://www.flipkart.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Flipkart
-            </a>
-          </strong>
-        </Career>
-        <Nav />
-      </DescriptionSection>
-    </UpperSection>
+    <Nav/ > 
+    <Hero />
+    <LatestPost />
+    <Text>
+      I moved to Singapore in November 2017 to work at <a target="_blank" rel="noopener noreferrer" href="https://www.tradegecko.com/">TradeGecko</a> as a software developer where I specialize in frontend development and occasionally work on backend as well. Before this gig, I was working at <a target="_blank" rel="noopener noreferrer" href="https://www.flipkart.com/">Flipkart</a> as a mobile developer and later as a web developer at the same company.
+    </Text>
+    <HeroImage />
+    <Text>
+      A Fujifilm X100F camera was my best purchase in 2018. I’ve been using it to document my travels since then. I post the ones that I like the most on my <a href="https://www.instagram.com/nishantdania/" target="_blank" rel="noopener noreferrer">Instagram channel</a> or at <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/@nishantdania">Unsplash</a>. The picture above was taken at Lake Marian in New Zealand in September 2018.
+    </Text>
+    <Text>
+      I strongly believe that you should learn as much as you can from the world around you and this act of learning should be consistent and should never stop. Occasionally (hopefully consistently in the future) I share my learnings and ideas on my <a href="/blog" target="_blank" rel="noopener noreferrer">blog</a>.
+    </Text>
+    <Text>
+      You can reach out to me at <a target="_top" href="mailto:nishantdania@gmail.com">nishantdania@gmail.com</a> for a fast response or find me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/nishantdania">Twitter</a>, <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nishantdania">LinkedIn</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/nishantdania/">Github</a> and <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/nishantdania/">Instagram</a>.
+    </Text>
+    <Footer />
   </Container>
 )
 
-export default IndexPage
+export default HomePage

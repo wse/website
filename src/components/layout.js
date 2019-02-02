@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../components/logo'
 import styled from "styled-components"
 import Nav from '../components/nav'
 import Subscribe from '../components/subscribe'
@@ -20,7 +19,6 @@ const Footer = styled.div`
 
 const Layout = ({ children }) => (
   <Container>
-    <Logo centered />
     <Nav centered />
     { children }
     <Subscribe />

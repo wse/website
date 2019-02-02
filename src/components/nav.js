@@ -17,6 +17,7 @@ const LinkListItem = styled.li`
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 600;
+    font-family: -apple-system-headline,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   .active {
     display: none;

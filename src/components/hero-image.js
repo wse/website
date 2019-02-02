@@ -3,18 +3,20 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from "styled-components"
 
-const RoundImage = styled(Img)`
-  border-radius: 50%;
-  width: 128px;
-  height: 128px;
+const Image = styled(Img)`
+  margin: 2rem 1rem;
+
+  @media (max-width: 800px) {
+    margin: 2rem;
+  }
 `
-const Image = () => (
+const HeroImage = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "headshot.jpeg" }) {
+        placeholderImage: file(relativePath: { eq: "hero-image.jpeg" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 900) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -22,8 +24,8 @@ const Image = () => (
       }
     `}
     render={data =>
-      <RoundImage fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Image fluid={data.placeholderImage.childImageSharp.fluid} />
     }
   />
 )
-export default Image
+export default HeroImage
