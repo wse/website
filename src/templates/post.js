@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Nav from '../components/nav'
 import Footer from '../components/footer'
+import '../components/layout.css'
 
 const Container = styled.div`
   max-width: 850px;

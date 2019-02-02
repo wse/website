@@ -27,8 +27,8 @@ const WhoAmI = styled.div`
 const Hero = () => (
   <WhoAmI>
     I’m <span>Nishant Dania</span>,<br />
-    a <span>software developer</span>&nbsp;
-    based in <span>Singapore</span>.
+    a <span>software developer</span>
+    {` `}based in <span>Singapore</span>.
   </WhoAmI>
 )
 
