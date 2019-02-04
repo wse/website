@@ -22,6 +22,9 @@ section,
 summary {
   display: block;
 }
+h3 {
+  margin: 2.5rem 0 1rem;
+}
 audio,
 canvas,
 progress,
@@ -96,7 +99,7 @@ samp {
   color: #fa3a57;
   font-size: 14px;
   line-height: 2em;
-  padding: .4rem .4rem .2rem;
+  padding: 0.2rem;
   vertical-align: middle;
   white-space: pre-wrap;
 }
@@ -108,7 +111,7 @@ code {
   color: #fa3a57;
   font-size: 14px;
   line-height: 2em;
-  padding: .4rem .4rem .2rem;
+  padding: 0.2rem;
   vertical-align: middle;
   white-space: pre-wrap;
 }

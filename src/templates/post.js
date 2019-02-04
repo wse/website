@@ -29,7 +29,7 @@ const Content = styled.div`
   margin: 2rem 1rem;
   margin-bottom: 4rem;
   font-family: serif;
-  line-height: 2rem;
+  line-height: 1.5rem;
 
   a {
     text-decoration: underline;
@@ -37,7 +37,6 @@ const Content = styled.div`
   }
 
   p {
-    margin-top: 1rem; 
     margin-bottom: 1rem; 
   }
 
