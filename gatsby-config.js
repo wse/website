@@ -128,6 +128,6 @@ module.exports = {
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-remove-serviceworker`,
-    //`gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };
