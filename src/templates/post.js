@@ -40,8 +40,13 @@ const Content = styled.div`
     margin-bottom: 1rem; 
   }
 
+  h2 {
+    padding: 1rem 0; 
+  }
+
   @media (max-width: 800px) {
     margin: 2rem;
+    font-size: 1.2rem;
   }
 `
 
