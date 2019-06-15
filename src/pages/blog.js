@@ -1,17 +1,17 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import {graphql} from 'gatsby';
+import styled from 'styled-components';
 
-import PostLink from '../components/post-link'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import '../components/layout.css'
-import { MetaData } from '../components/common/meta'
+import PostLink from '../components/post-link';
+import Nav from '../components/nav';
+import Footer from '../components/footer';
+import '../components/layout.css';
+import {MetaData} from '../components/common/meta';
 
 const Container = styled.div`
-  max-width: 850px;
+  max-width: 750px;
   margin: auto;
-`
+`;
 
 const PageDescription = styled.h1`
   line-height: 2rem;
@@ -20,7 +20,7 @@ const PageDescription = styled.h1`
   @media (max-width: 800px) {
     margin: 4rem 2rem;
   }
-`
+`;
 
 const PostsContainer = styled.ul`
   margin: 2rem 1rem;
@@ -30,49 +30,40 @@ const PostsContainer = styled.ul`
     margin: 2rem;
     margin-bottom: 5rem;
   }
-`
+`;
 
 const BlogListItem = styled.li`
   display: block;
   margin: 2rem 0rem;
-`
+`;
 
-const BlogPage = ({
-  data,
-  location,
-}) => {
+const BlogPage = ({data, location}) => {
   const posts = data.allGhostPost.edges;
 
-  const Posts = posts.map((post) => {
-    let link = `/blog/${post.node.slug}`
-    return <BlogListItem key={post.node.id}>
-            <PostLink link={link} key={post.node.id} post={post.node} />
+  const Posts = posts.map(post => {
+    let link = `/blog/${post.node.slug}`;
+    return (
+      <BlogListItem key={post.node.id}>
+        <PostLink link={link} key={post.node.id} post={post.node} />
       </BlogListItem>
-  })
-  return <Container>
-    <MetaData
-      location={location}
-      data={data}
-      title="Blog"
-    />
-    <Nav />
-    <PageDescription>
-      Blog Posts
-    </PageDescription>
-    <PostsContainer>
-      {Posts}
-    </PostsContainer>
-    <Footer />
-  </Container>
-}
+    );
+  });
+  return (
+    <Container>
+      <MetaData location={location} data={data} title="Blog" />
+      <Nav />
+      <PageDescription>Blog Posts</PageDescription>
+      <PostsContainer>{Posts}</PostsContainer>
+      <Footer />
+    </Container>
+  );
+};
 
-export default BlogPage 
+export default BlogPage;
 
 export const pageQuery = graphql`
   query {
-    allGhostPost(
-      sort: { order: DESC, fields: published_at }
-    ) {
+    allGhostPost(sort: {order: DESC, fields: published_at}) {
       edges {
         node {
           id
@@ -86,4 +77,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
