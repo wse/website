@@ -6,6 +6,7 @@ import PostLink from '../components/post-link';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import '../components/layout.css';
+import VimTraining from '../components/vimtraining'
 import {MetaData} from '../components/common/meta';
 
 const Container = styled.div`
@@ -52,6 +53,7 @@ const BlogPage = ({data, location}) => {
     <Container>
       <MetaData location={location} data={data} title="Blog" />
       <Nav />
+      <VimTraining />
       <PageDescription>Blog Posts</PageDescription>
       <PostsContainer>{Posts}</PostsContainer>
       <Footer />

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import Hero from '../components/hero'
+import VimTraining from '../components/vimtraining'
 import Footer from '../components/footer'
 import Nav from '../components/nav'
 import LatestPost from '../components/latest-post'
@@ -38,6 +39,7 @@ const HomePage = ({ location }) => (
     />
     <Nav/ > 
     <Hero />
+    <VimTraining />
     <LatestPost />
     <Text>
       I moved to Singapore in November 2017 to work at <a target="_blank" rel="noopener noreferrer" href="https://www.tradegecko.com/">TradeGecko</a> as a software developer where I specialize in frontend development and occasionally work on backend as well. Before this gig, I was working at <a target="_blank" rel="noopener noreferrer" href="https://www.flipkart.com/">Flipkart</a> as a mobile developer and later as a web developer at the same company.

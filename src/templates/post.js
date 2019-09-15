@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import styled from 'styled-components';
 
 import Nav from '../components/nav';
+import VimTraining from '../components/vimtraining'
 import Footer from '../components/footer';
 import '../components/layout.css';
 import {MetaData} from '../components/common/meta';
@@ -76,12 +77,14 @@ export default function Post({
     <Container>
       <MetaData location={location} data={data} />
       <Nav />
+      <VimTraining />
       <Header>
         <Title>{title}</Title>
         <Date>{post.published_at_pretty}</Date>
         <Tag>{post.primary_tag && post.primary_tag.name}</Tag>
       </Header>
       <Content dangerouslySetInnerHTML={{__html: html}} />
+      <VimTraining />
       <Footer />
     </Container>
   );
