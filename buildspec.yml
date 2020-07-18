@@ -1,9 +1,0 @@
-version: 0.1
-phases:
-  install:
-    commands:
-    - npm install --global yarn 
-    - npm install --global gatsby-cli
-    - yarn 
-    - GA_TRACKING_URL=$GA_TRACKING_URL gatsby build
-    - aws s3 sync public s3://nishantdania.com --delete
