@@ -1,27 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import PageHeader from '../components/page-header'
 
 const Container = styled.div`
   max-width: 700px;
   margin: auto;
-  padding: 32px 24px;
-`
+  padding: 64px 24px;
 
-const Title = styled.h1`
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 40px;
-  padding-bottom: 20px;
-  padding-top: 72px;
-  text-transform: capitalize;
-  max-width: 66.66%;
-`
-
-const Divider = styled.div`
-  height: 8px;
-  background: #000;
-  max-width: 150px;
+  @media (max-width: 700px) {
+    padding: 0 24px;
+  }
 `
 
 const DateContainer = styled.div`
@@ -91,8 +80,7 @@ export default function Template({
 
   return (
     <Container>
-      <Title>{title}</Title>
-      <Divider />
+      <PageHeader title={title} />
       <DateContainer>
         <div>Published on</div>
         {date}
