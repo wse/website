@@ -12,10 +12,10 @@ const Title = styled.h1`
   font-size: 32px;
   font-weight: bold;
   line-height: 40px;
-  max-width: 250px;
   padding-bottom: 20px;
   padding-top: 72px;
   text-transform: capitalize;
+  max-width: 66.66%;
 `
 
 const Divider = styled.div`
@@ -62,7 +62,23 @@ const Content = styled.div`
   hr {
     margin-bottom: 32px;
     margin-top: 16px;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #efefef;
+  }
+
+  ul {
+    counter-reset: item;
+    li {
+      padding: 32px 0;
+      border-bottom: 1px solid #efefef;
+      :before {
+        counter-increment: item;
+        content: counter(item) '.';
+        padding: 16px 0;
+        padding-right: 16px;
+        font-weight: bold;
+        display: none;
+      }
+    }
   }
 `
 
