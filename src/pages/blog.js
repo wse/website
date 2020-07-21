@@ -73,19 +73,20 @@ const Blog = function ({ data }) {
     <Layout>
       <PageHeader title="Blog Posts" />
       <ul>
-        {allMarkdownRemark.edges.map(edge => {
-          const { excerpt, frontmatter, id } = edge.node
-          return (
-            <Post key={id}>
-              <StyledLink to={frontmatter.slug}>
-                <Title className="blog-title">{frontmatter.title}</Title>
-                <DateContainer>{frontmatter.date}</DateContainer>
-                <Excerpt>{excerpt}</Excerpt>
-                <Read>Read On &rarr;</Read>
-              </StyledLink>
-            </Post>
-          )
-        })}
+        {posts &&
+          posts.map(edge => {
+            const { excerpt, frontmatter, id } = edge.node
+            return (
+              <Post key={id}>
+                <StyledLink to={frontmatter.slug}>
+                  <Title className="blog-title">{frontmatter.title}</Title>
+                  <DateContainer>{frontmatter.date}</DateContainer>
+                  <Excerpt>{excerpt}</Excerpt>
+                  <Read>Read On &rarr;</Read>
+                </StyledLink>
+              </Post>
+            )
+          })}
       </ul>
     </Layout>
   )
