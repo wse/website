@@ -74,9 +74,9 @@ const Blog = function ({ data }) {
       <PageHeader title="Blog Posts" />
       <ul>
         {allMarkdownRemark.edges.map(edge => {
-          const { excerpt, frontmatter } = edge.node
+          const { excerpt, frontmatter, id } = edge.node
           return (
-            <Post>
+            <Post key={id}>
               <StyledLink to={frontmatter.slug}>
                 <Title className="blog-title">{frontmatter.title}</Title>
                 <DateContainer>{frontmatter.date}</DateContainer>
@@ -96,6 +96,7 @@ export const query = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
+          id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
