@@ -89,7 +89,7 @@ const Blog = function ({ data }) {
 
 export const query = graphql`
   query BlogPageQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
           frontmatter {
