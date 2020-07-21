@@ -4,7 +4,9 @@ import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
 import styled from 'styled-components'
 
-const Container = styled.div``
+const Post = styled.li`
+  padding: 24px 0;
+`
 
 const Title = styled.h1`
   font-size: 32px;
@@ -70,19 +72,21 @@ const Blog = function ({ data }) {
   return (
     <Layout>
       <PageHeader title="Blog Posts" />
-      <Container>
+      <ul>
         {allMarkdownRemark.edges.map(edge => {
           const { excerpt, frontmatter } = edge.node
           return (
-            <StyledLink to={frontmatter.slug}>
-              <Title className="blog-title">{frontmatter.title}</Title>
-              <DateContainer>{frontmatter.date}</DateContainer>
-              <Excerpt>{excerpt}</Excerpt>
-              <Read>Read On &rarr;</Read>
-            </StyledLink>
+            <Post>
+              <StyledLink to={frontmatter.slug}>
+                <Title className="blog-title">{frontmatter.title}</Title>
+                <DateContainer>{frontmatter.date}</DateContainer>
+                <Excerpt>{excerpt}</Excerpt>
+                <Read>Read On &rarr;</Read>
+              </StyledLink>
+            </Post>
           )
         })}
-      </Container>
+      </ul>
     </Layout>
   )
 }

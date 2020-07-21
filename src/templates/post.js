@@ -36,6 +36,13 @@ const Content = styled.div`
     padding-top: 40px;
   }
 
+  h2 {
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 8px;
+    padding-top: 20px;
+  }
+
   strong {
     font-weight: bold;
   }
@@ -68,6 +75,19 @@ const Content = styled.div`
         display: none;
       }
     }
+  }
+
+  ol {
+    list-style: none;
+    li {
+      padding: 32px 0;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
   }
 `
 

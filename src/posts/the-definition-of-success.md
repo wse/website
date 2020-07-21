@@ -1,8 +1,7 @@
 ---
 slug: '/blog/the-definition-of-success'
 date: '2019-03-02'
-title: 'The Definition of Success
-'
+title: 'The Definition of Success'
 ---
 
 I feel this topic is pretty close to my heart. The reason for that is that discussions around this topic come up way too often in my life and I've spent enough time(years) trying to codify this in a way that is understandable for me based on my past experiences and observations. Codifying this also means that the next time I have this discussion with anyone, I know exactly how I think about this and am able to put my thoughts in a clearer way. So here it goes...
