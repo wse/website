@@ -92,16 +92,11 @@ const Nav = () => (
     </Links>
 
     <Links>
-      <StyledAnchor
-        class="inverted-link"
-        target="_blank"
-        href="https://twitter.com/nishantdania"
-      >
+      <StyledAnchor target="_blank" href="https://twitter.com/nishantdania">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAD3ElEQVRoge2ZS2gdVRjHf19S2kZM1VqqLVqrBaUJoqW4srpQS3HhwgfqQiHSlVgqCFYXFUHURXUj1oWgoKsaVMSFWiTtwkd91SIUSwo+EG2NFkNIWtM2TX4u5iYO986d3MdMIpgfXJh7zrnn+//vecycb2CBBRb4XxDzLUBdB6wDVgCjwG/A4YiYnFdhjaB2q0+pR83mT/XVism8fi5Vb8yquLY09f/GuFP9o46Bak6rz6qdVX2sVXer4+qG6gCr1FPq/SWa2KFONWgizXvqJvVJ9TN1slL+dlaQxyqVZ9TNJZh4sAUDeRxXV2YF+jDV6LR6T4Em1qh/F2jihNpb6ft8dUtHKl5P6noJ0K9uL8jLM0BXQX19BzwC3KTuAYZI777qSB33b6kXtBpVXVYZ4aKYrPr+eHXAoZwf/6Te0qKRews0Uc2u6TjpqfVzjp4rgX3qO+raJr30Ntm+EQR2RsSO6YK0kc8b6OBuYFB9zcpia4BVTQhshHPAXRHxXGatekOTwzqlfqw+pC6vF1V9uci5pI5mxVk0fRER36j7gUbXQgCbK58J9VPgAPA1cAg4HhECvzbYX6NM1RMzg9oDHKSYrfIs8DvJfF5bQH/THIuIy6oLOwDUAIiII8BW6rhuksXAFRRrApIn5BqmF3uneljdBgwADwDjBQsoil+yCmemlnqC5EwAybxeDFxSvq6meSUitlUXprffb1PXl/PfNAFwJKswbeSjORLSLgeyCtNT60KS+bdsrhS1wCiwPOsYPDMiETECPD+Xqlpgb72zfEfV9xeB/eXraZl361XUZFHUbpL1Unuon1/GgNURcTKrsnpEiIgx4FbgJYq5MRbFm/VMzIraq76hDhf84NcsU+o1eVoXZRWqG4E+YBj4C/iK5OGwM6v9HNAfEUfzGmRmGtUukrv7xWWoapIJoCcifshrVLNGACJiHHi6DFUtsHs2E5CT+zXJ7n0AbClSVZP8CFwXEadma5g5IgCVG899wBcFCmuGSWBrIyYaQu1SX7e1VGc7PFGIgQxDm9T31Yk5MNFv5bBXGiYJt9vVXdYmy4pgr7qkVBMVIx3qo+rJEkwMmGz9pRu4Q/2yBAOaPEGUNxLqavVhdbAkAxMWsLBDvZ4kZTMGdAMXkaRIN5LkuNa3GySH74G+iDjYdk/qSpPXWGdL+sezGFF3qkvb/y9qDV2t7jF5Y1WmgRfU8p/h1BXqdvVQQeLPqZ+ofep5ZenOvemo64HbgJuBDcBVs/2GJEEwSPJmaQDYFxHD7UvNp6m7p8kev4bkVUE3sBQ4Q7JRjAJDEXGsaJELLDCP/ANy4Cd5pzcP8AAAAABJRU5ErkJggg==" />
         Twitter
       </StyledAnchor>
       <StyledAnchor
-        class="inverted-link"
         target="_blank"
         href="https://www.instagram.com/nishantdania/"
       >
@@ -109,18 +104,13 @@ const Nav = () => (
         Instagram
       </StyledAnchor>
       <StyledAnchor
-        class="inverted-link"
         target="_blank"
         href="https://www.linkedin.com/in/nishantdania/"
       >
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAEY0lEQVR4nO2dz2sdVRTHP+dhqVL8URfVqihUF4K0UCsUY0DoTlFqhBihuAhW/QPs3qXgojsXLhRcKMWEioUILgpKFw1GbVwVrT+hpuiirZg0Ucv7uphpeDR5Se7clzl15nwgiw733HPv/XTenfve3BnjOiR1gIPAKLAfuAe4+fpywYZYAuaAaWACOGFm3d4C1vsPSXuBd4G9dbWwZXwDvGxms9cOLAuQ9AxwDNjm0LA2sQCMmdkUlALK//mniMGviwVg2MxmrfzMnwEedW5U25gF9pmkEeC4d2taykgHeMG7FS1m1CT9COzybklL+ckkLRLX+V4smSR5t6LNdLwb0HZCgDMhwJkQ4EwIcCYEOJMroAt8DByiWMxtK/92lceOl2WCPuSsA74HXjSzM2sVkrQH+BB4pGKeRlNVwFngCTO7tJHCkm4FPie+cV1BFQFXgT1mdjYlSNIDFOJuSczXaKrMAR+kDj6Amf0KvFMhX6OpImAiI99kRmwjqSLg64x8yWdO06ki4GJGvisZsY2kioDtGfnuzohtJFUE7MvIN5wR20iqCDiUke+ljNhGUmUd0KVYhE2nBEl6GphKzNV4qq6ELwBPmtm5jRSWtBv4grz5o5FU/TJuJzAjaVzSTf0KSdoi6TXgNDH4qzKIH+V/Bj6huAP4QnlsJzAEPAfcn1l/o4m7IpyJH2ScCQHOhABnQoAzfS8h+2Fmtn6p/qRO+puc7zzwGcX+iO+AX4A/gXlgK3AfxR65x4Hn2Yxf9JRIA/JdlXRM0lCFuoYknUrtw5r9Sw4Y/IDUmW9axXasnPo6ko6oEJmN94DUme9tSVty6+upd0TSP6n9WdE/xwGpM99bufX0qXs8tT8r+uc0IHXmm5SUNZGvU//7qX3qJfmriP/hVdAdZnY5p4516t8O/ADcWSW+8euAzRz8sv5LwJuV45t+BtSBijv/zgO3pcY2/gyoAzP7C/ioSmwIGByVbliLj6ABIWkrcJnELb+tOgMk7Zb0nqRzkq5IOinpwCDqNrO/gS+rNCqJ3IbWna8n7+uS/l0lRVfSGwPKcTS5f3UPSN35ypyvbiDV4QHkeSW1f42fAyTtoNjNc/s6RS8CD21000mfXAeAkykxbZgDxlh/8KFYyebc9Qfwe2pAGwQ8m1D2qcxcf6QGtEHAgwllH87MtZga0AYBd21S2dVYSg1owyR8Q+drwxlwQxMCnAkBzoQAZ0KAMyHAmRDgTAhwJgQ4EwKcCQHOhABnQoAzIcCZEOBMCHAmBDgTApwJAc6EAGdCgDMhwJkQ4Ew8sMmZOAOcCQHOhABnQoAzIcCZEOBMhwr3tAcDY7EDzHm3osXMdSgeORz4cLpD3kt5gjwmTcXTpGbIezNGkM4Z4LGOmQk4DCw4N6hNzAPjZtbtAJjZLMWG5pCw+cwDY2b2LfSsA8xsiuIlOznvCQvW5itg2Mw+vXZgxZbMck44CIwC+4F7SXwGTrDMEvAbxZXmBHCi/Mhf5j8w/CtrPgki5gAAAABJRU5ErkJggg==" />
         LinkedIn
       </StyledAnchor>
-      <StyledAnchor
-        class="inverted-link"
-        target="_blank"
-        href="mailto:nishantdania@gmail.com"
-      >
+      <StyledAnchor target="_blank" href="mailto:nishantdania@gmail.com">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAADa0lEQVR4nO3cP2hVZxzG8eeoTRWXprRCI6LYQFoKBZfiooFSEAdHFwkZpbo4drVQSqFTKKV1tXRxVbAqtIFODhKCCg6SRbCUWIRCUank2+HkQpR7c/6+53fP7fMZw7nnfd734fy9l0hmZmZmZvZ/k6UeACD1GCllWZZ0jXak3LkVcwHBXEAwFxDMBQRzAcFcQLBd0QFS32cXiX5O8REQzAUEcwHBXEAwFxAsWQHAHHA91f67AvwGfBydozTgLeAb4AUljEHeMv4FLgHvROcdCdgBLAJ/lpxUnwoY+Au4AOyMzv0K4BPgdsXJ9LGAgRXgeHR2AfuBy8BGzYn0tYCBq8ChiNBT5Ifi3w0n0PcCAP4BLgJ7ugp8ClhrITgwEQUMPAIWUwadA663GBiYqAIGfqXN21Zgmgq3lVW1FrT+/FJo77YVWK8Z4hnwVdFGLaxh0/kV+Rp4XnMN1rsIOMxV4HCZzzcOmHh+m9scIL/bqyx5wNc8AE5WnWCkKvmAT4G7VRYkecBNT4EvgKkmE4xQNR+wCzgLPCmzMMkDAneAd9uaYNfq5gP2bc49vADIz/kH25xgV+rkA2YoeU1IHnCLwRPhVJXPNw7YUJV85C8cz1LhDUDygEOsAkfrTDBC2XzAEWq8cEwecIQN8kP07eQB089vL/mD6Ms6C1E0fuFvchou0h+S3ts2wPj/LuixpJm6+y+aX+oCCvWggEaK5ucv5YO5gGAuIFh4AcBC4NhnosYeCC9A0k/AMvBhVwMC7wO/SPq5qzFHGYcCJGle0urm/fabqQYB3gAuSFqVdCLVOFWE34YO8VDS+SzLbrW5U+CYpB8kfdTmfov08TZ0VtJN4ArbvGUti/wr1SVJy+p48csYxyNgq6eSvpT0XZZlG1U/DJyW9L2kxkXWNfZPwiX9LulclmX3y2wMzCo/3XyWNFUJfTwFDXNM0gqwBOwdtRGwG7go6Z7GYPHL6MsRsNWa8ov0ja1/BOYl/Sjpg5BUI0zKKWiYa5I+l/RS0reSFtTBf3+papILkPKLtCRNh6bYxqQXMPYm5SI8sVxAMBcQzAUEcwHBXEAwFxDMBQRzAcFcQDAXEMwFBHMBwVxAMBcQzAUEcwHBXEAwFxDMBQRzAcFcQDAXEMwFBHMBwVxAMBdgZmZmZmZmZmbWkf8AULvpYZhpsSEAAAAASUVORK5CYII=" />
         Email
       </StyledAnchor>
