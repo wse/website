@@ -5,7 +5,11 @@ import PageHeader from '../components/page-header'
 import styled from 'styled-components'
 
 const Post = styled.li`
-  padding: 24px 0;
+  padding-bottom: 24px;
+
+  @media (max-width: 650px) {
+    padding: 24px 0;
+  }
 `
 
 const Title = styled.h1`
@@ -14,8 +18,14 @@ const Title = styled.h1`
   line-height: 40px;
   text-transform: capitalize;
   max-width: 66.66%;
-  padding-top: 48px;
+  padding-top: 42px;
   padding-bottom: 16px;
+
+  @media (max-width: 650px) {
+    padding-top: 32px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 `
 
 const DateContainer = styled.div`

@@ -5,17 +5,22 @@ import '../styles/global.css'
 import styled from 'styled-components'
 import Nav from './nav'
 
-const ContentContainer = styled.div`
-  max-width: 700px;
+const MainContainer = styled.div`
+  max-width: 650px;
   margin: auto;
-  padding: 0 24px;
+  padding-bottom: 72px;
+`
+const ContentContainer = styled.div`
+  @media (max-width: 650px) {
+    padding: 0 24px;
+  }
 `
 
 const Layout = ({ children }) => (
-  <ContentContainer>
+  <MainContainer>
     <Nav />
-    {children}
-  </ContentContainer>
+    <ContentContainer>{children}</ContentContainer>
+  </MainContainer>
 )
 
 export default Layout

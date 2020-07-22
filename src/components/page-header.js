@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div`
+  display: ${props => (props.alwaysShow ? 'block' : 'none')};
+  @media (max-width: 650px) {
+    display: block;
+  }
+`
+
 const Title = styled.h1`
   font-size: 32px;
   font-weight: bold;
@@ -9,19 +16,29 @@ const Title = styled.h1`
   padding-top: 42px;
   text-transform: capitalize;
   max-width: 66.66%;
+
+  @media (max-width: 650px) {
+    padding-top: 32px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 `
 
 const Divider = styled.div`
   height: 8px;
   background: #000;
   max-width: 150px;
+  @media (max-width: 650px) {
+    height: 4px;
+    max-width: 100px;
+  }
 `
 
-export default function PageHeader({ title }) {
+export default function PageHeader({ title, alwaysShow = false }) {
   return (
-    <>
+    <Container alwaysShow={alwaysShow}>
       <Title>{title}</Title>
       <Divider />
-    </>
+    </Container>
   )
 }

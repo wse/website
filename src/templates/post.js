@@ -91,7 +91,7 @@ export default function Template({
 
   return (
     <Layout>
-      <PageHeader title={title} />
+      <PageHeader title={title} alwaysShow />
       <DateContainer>
         <div>Published on</div>
         {date}

@@ -10,26 +10,32 @@ const NavContainer = styled.div`
 
   :hover {
     .internal-container {
-      opacity: 100;
+      display: block;
     }
   }
 
   img {
+    box-sizing: content-box;
     width: 16px;
     padding: 0 8px;
   }
 `
 const InternalContainer = styled.div`
   width: 100%;
-  // opacity: 0;
-  // transition: all 200ms;
-  // background: white;
-  // position: fixed;
-  // max-width: 700px;
-  // top: 68px;
-  // border-radius: 0px;
-  // overflow: hidden;
-  // border: 1px solid;
+
+  @media (max-width: 650px) {
+    z-index: 1;
+    display: none;
+    background: white;
+    position: fixed;
+    max-width: 700px;
+    bottom: 64px;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
 `
 
 const Links = styled.ul`
@@ -78,27 +84,44 @@ const StyledAnchor = styled.a`
   }
 `
 
-const Me = styled(Link)`
+const MeContainer = styled.div`
   font-size: 20px;
   letter-spacing: 8px;
   text-transform: uppercase;
-  padding: 24px 0;
+  padding: 72px 0;
   border-bottom: 1px solid;
   width: 100%;
   text-align: center;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
+  background: white;
   span {
     display: none;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    border-bottom: none;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    span {
+      display: block;
+    }
   }
 `
 
 const Nav = () => (
   <NavContainer>
-    <Me to="/">
-      Nishant Dania<span>&#9776;</span>
-    </Me>
+    <MeContainer>
+      <span>&#9776;</span>
+      <Link to="/">Nishant Dania</Link>
+    </MeContainer>
     <InternalContainer className="internal-container">
       <Links>
         <StyledLink to="/blog">
