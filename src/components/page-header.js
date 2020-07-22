@@ -6,7 +6,7 @@ const Title = styled.h1`
   font-weight: bold;
   line-height: 40px;
   padding-bottom: 20px;
-  padding-top: 72px;
+  padding-top: 42px;
   text-transform: capitalize;
   max-width: 66.66%;
 `

@@ -4,16 +4,6 @@ import styled from 'styled-components'
 import PageHeader from '../components/page-header'
 import Layout from '../components/layout'
 
-const Container = styled.div`
-  max-width: 700px;
-  margin: auto;
-  padding: 64px 24px;
-
-  @media (max-width: 700px) {
-    padding: 0 24px;
-  }
-`
-
 const DateContainer = styled.div`
   padding-top: 20px;
   padding-bottom: 48px;
@@ -101,14 +91,12 @@ export default function Template({
 
   return (
     <Layout>
-      <Container>
-        <PageHeader title={title} />
-        <DateContainer>
-          <div>Published on</div>
-          {date}
-        </DateContainer>
-        <Content dangerouslySetInnerHTML={{ __html: html }} />
-      </Container>
+      <PageHeader title={title} />
+      <DateContainer>
+        <div>Published on</div>
+        {date}
+      </DateContainer>
+      <Content dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
