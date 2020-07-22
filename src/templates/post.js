@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import PageHeader from '../components/page-header'
+import Layout from '../components/layout'
 
 const Container = styled.div`
   max-width: 700px;
@@ -99,14 +100,16 @@ export default function Template({
   const { title, date } = frontmatter
 
   return (
-    <Container>
-      <PageHeader title={title} />
-      <DateContainer>
-        <div>Published on</div>
-        {date}
-      </DateContainer>
-      <Content dangerouslySetInnerHTML={{ __html: html }} />
-    </Container>
+    <Layout>
+      <Container>
+        <PageHeader title={title} />
+        <DateContainer>
+          <div>Published on</div>
+          {date}
+        </DateContainer>
+        <Content dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
+    </Layout>
   )
 }
 
