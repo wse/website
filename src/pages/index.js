@@ -1,10 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout'
 import HeroImage from '../components/hero-image'
+import PageHeader from '../components/page-header'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const ContentContainer = styled.div``
+const ContentContainer = styled.div`
+  @media (max-width: 650px) {
+    padding-top: 56px;
+  }
+`
 
 const ImageContainer = styled.div`
   padding: 24px 0;
@@ -21,6 +26,7 @@ const Text = styled.p`
 
 const IndexPage = () => (
   <Layout>
+    <PageHeader title="About Me" />
     <ContentContainer>
       <Text>I’m Nishant Dania, a software developer based in Singapore.</Text>
       <Text>

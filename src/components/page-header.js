@@ -9,12 +9,11 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 40px;
   padding-bottom: 20px;
   padding-top: 42px;
-  text-transform: capitalize;
   max-width: 66.66%;
 
   @media (max-width: 650px) {
@@ -34,11 +33,16 @@ const Divider = styled.div`
   }
 `
 
-export default function PageHeader({ title, alwaysShow = false }) {
+export default function PageHeader({
+  title,
+  alwaysShow = false,
+  showDivider = true,
+  className = '',
+}) {
   return (
-    <Container alwaysShow={alwaysShow}>
+    <Container className={className} alwaysShow={alwaysShow}>
       <Title>{title}</Title>
-      <Divider />
+      {showDivider && <Divider />}
     </Container>
   )
 }

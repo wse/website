@@ -12,22 +12,6 @@ const Post = styled.li`
   }
 `
 
-const Title = styled.h1`
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 40px;
-  text-transform: capitalize;
-  max-width: 66.66%;
-  padding-top: 42px;
-  padding-bottom: 16px;
-
-  @media (max-width: 650px) {
-    padding-top: 32px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-`
-
 const DateContainer = styled.div`
   font-weight: bold;
   font-size: 12px;
@@ -89,7 +73,12 @@ const Blog = function ({ data }) {
             return (
               <Post key={id}>
                 <StyledLink to={frontmatter.slug}>
-                  <Title className="blog-title">{frontmatter.title}</Title>
+                  <PageHeader
+                    title={frontmatter.title}
+                    showDivider={false}
+                    alwaysShow={true}
+                    className="blog-title"
+                  />
                   <DateContainer>{frontmatter.date}</DateContainer>
                   <Excerpt>{excerpt}</Excerpt>
                   <Read>Read On &rarr;</Read>
