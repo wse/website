@@ -59,6 +59,10 @@ const StyledLink = styled(Link)`
   :hover {
     background: #f7f7f7;
   }
+
+  &.active {
+    background: #eaeaea;
+  }
 `
 
 const StyledAnchor = styled.a`
@@ -124,35 +128,35 @@ const Nav = () => (
     </MeContainer>
     <InternalContainer className="internal-container">
       <Links>
-        <StyledLink to="/blog">
+        <StyledLink activeClassName="active" to="/blog">
           <img
             alt=""
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAADaUlEQVR4nO2cT04UQRjFfxBwZdRESIiAK2/gKVyoQ7yAB9DExAuoG//cBjB6CNEDqLjB6EYjAjt1cNFDAgNMV/dUTb2afr/kW3V18VW9qup+NU2BMcYYk597wE/gsGOxA9yK0H8AzMSqCPgOLEWsryR2gOsxKoopyGHEukokSl/OxqjExGMuYd0xZ58iSVYEzxAxLIgYFkQMCyKGBRHDgohhQcTIKchj4Df596KG4wsR96ZyMtywUSwBf8+4RyW+Rm5vMDlniJfLxDQdMY+AX2fclztCl6wkMyTlbm/X9rK82zuNWBAxLIgYXfIhU+MvQinBh4T4i1DsQ0wz1H1I7CXLPkQM+5AuYEHEsCBiWBAxLIgYFkQMCyJGiCChxqvtfaPiAPgAPAUWWrTviEXg2aCug0i5tW3v2Ex6v+m82AV6LfJfQ+tjirHJ3YDj8Y9moqwN7smd99QKcki1/xWyfC2iNTOCBJlteoMAV4AHAeUeApcS5xKDE/1f6lvWnYAyt5NnkYAZTs+K4V1LxVmzT/3o3wcuTiCXpozs31JnSMggURxItZQqyOeAMtvJs0hAqYJsBpTZSJ5FAkp8huwCN6hOjRjFAtVMupw8o2ZM1TOkD9ynXgyAH4Oy/YT5JKHOh+Q2UscN4d0W7euh9VH3MKeuKwuyB2wBT4CrZ+QWygLVBuV7qtdhCzIiNoBrI7tzMixTvSx0XpDlwA6bBCtkFmSO6f9+Sp3G/Z96xGyiMUtWgNdMfoacIESd2kpMI0b2eWk+ZOqxIGJYEDEsiBgWRAwLIoYFEcOCiGFBxLAgYlgQMVII8gZYHcTbDl5PTtPdzJVj96528PpYu71esgqk6QgYntJdu+7fQwrDv4eUhAURw4KIMQlBcvuC4n3HMON+ZZHbF+T2HfYh0864IyK3L8jtO+xDxLEPKQkLIoYFESOnIEcPyxmxkPEb5zHuW0WIP1Ejht+wD+kKqUbK0ZKlRiy/kcyHqJ4ZUiJ71PzffMiS9S1OLoaAvgwRZCtCIqbiXV2BEEHWIyRiKqKcvzIPfCLdQ64rsQ1caNj357Im0KCSo0/YKXiNeCXQsFLjeYv+rmUWeCnQuJKiD7wgsQHv4WdKSHykxelFbY/VmB/8sR5wk2pfquvm8QDYoTpxaH0Qf7JmZIwxplP8Bx6gnS8mOXLNAAAAAElFTkSuQmCC"
           />
           Blog
         </StyledLink>
-        <StyledLink to="/bookshelf">
+        <StyledLink activeClassName="active" to="/bookshelf">
           <img
             alt=""
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAEa0lEQVR4nO2dy6scRRSHvzEYXSi+ggtzI/hA8YG6EgTNdePiJiF/gBvFhbpSEdy5U1AEIVtduFBXLlyIV91ERiKKL0QEyULQZIIBHxGjSEDjuOgZ7nRN9et0dfe5c38f9Ka7zqkz59dd1VVd3QNCCCGEEMIXB4AJMK25TYCNDv3seJokcb6d7NDPSjBqYTtNVGcqPyvBBUMHIPJIEGdIEGdIEGdIEGekEuQ9YI3szmdx2we8P4CfHcniuGCtpNy+oGxXflYCNVn12QVcB1w0dCBFLJ6t86YmZN7U1L1C2vhJzcXAfuBZ4APg7Kze08CtPdTfmKbTHXUEaeOn7ZzYZTMfLwAfA+dKbN+olaGe8SaIdU7sXuAz4HwDu58a5Kk3vAli9XPaaHdT/VTVR506XGm0W08axQwJAl8a7SRIR4yNdhKkIz4y2q0BN6QMBCQIwCfAPwXHzpHdAr9KdicW0slVYmXou6MqP5vA3oXja2QDz5ifT4N954EnyY/KRywPTl8vTk//eBekaMQf8/NisO/Dgt/8RFDuREE5M2qyMsJ+JJaXEfBAsO9asvktF3i/QsJ5sdh82NzPpWT9yHzff8DTwCVkA8CHCmynwMPlaeoP74I09fO50f616lTVR03WFtbb3/WUQUiQLayCXE/WlyRBgmxxjOx218L+VEFIkC3+AL4x2iZrtiRIHmuzdX+qACRIHqsgN5KfFTAjQfIcIxuDWEjSj0iQPGeAb422SfoRCbLMoP2IBFnGKsjNwDVtK5cgy4yx9yP3ta1cgixzBvjOaNu6H5EgcQab15IgcayC3AJc3aZiCRJnTHyKv4oRLccjEiTOL8Bxo22rZkuCFDNIPyJBihlXHJ8Cv0f23w7ssVYqQYopukLeBQ4CV5GtC74b+G3h+IgE4xELi8+VwzVQc2JrofrwMyVLXLguazNSrozjQdmviJ/ELwXljlT47YTFADy8Yxgmusm6rCJeCcoWLWgIy31d4bcQNVnlhM3WBvlxxhXAU8AjQbk7Zsd6ZfGM8PCOYXjmb7K8LqtoKWkReyPlfwbeInuNoeytq8MVvpPTdh2UVz8h3xv9vlzD9xJqsqoZG+3WLUYSpBrrAPEu4PKmRhKkGqsgu4A7mxpJkGpOAj8Y7P7F8LqCBKlHk6vkb7L3Sw4DP3YSTQHePoLZ5cc0Hyzx8SvwDvAMcA9wYU2fydkg+0FNfnzs867e/MTYDbw9szsBvAk8DtzGin6Mc7uwe+gAhAMOAKewj3y11dsms1zniLV/E8pnXUU6JgQv+8QEmfYTi5iR00DjEGdIEGdIEGdIEGdIEGfEBDnVexQ7l0m4IybIo7GCIjkT4LGhgxBCCLE6WB6u1J3rWvUHN53kQeMQZ0gQZ0gQZ0gQZ0gQZ0gQZ0gQZ0gQZ0gQZ0gQZ1gE+atGmbMGv9uNTvJgEeSLGmWs/+u0nXCTh0NUL5M82EcgA+MqD8+XBPFcX0E4wFUeDgFHgT9n21F2xpURojwIIYQQQrjnf/tnfWuE5ENaAAAAAElFTkSuQmCC"
           />
           Bookshelf
         </StyledLink>
-        <StyledLink to="/mixtape">
+        <StyledLink activeClassName="active" to="/mixtape">
           <img
             alt=""
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAD2ElEQVRoge3YT2hcVRQG8N+UVCOm1tpYta2o4KboRlERXYggIggqaq1IMbqQFhopiNXuRBApRRDFlSIUXalbV1qobeK/hX9AUAR1YZpURFtFTBqTJi7ue52XyXtv7pt5k0TJB5eZN/fcc7/vnXvvOXNZxSp6gkbN/q7B7bg2aZfhQgxgBl/gNbxX87y1YCsO4EfMR7ZXl4VpAS7Bm/hHk+DPeB27cRuuwgasxSB24rfE9oGlp7wYQzgpEJrCG7gucuzOZNzR3lCLQx9e0YzAO9hc0cdgMvaveqnFYw3eTkj8je0VxjawCTfhucTHRN0EY/FyQuAUbmxje4ewf77Crzhj8Ybf2zOmJbhPcz/c2sZ2r/yT6nd8jUO4s1dEy7BBeKvzGI6wP5HYPo+bcamwt4qwEffgJRzGT8JBMpt8fobH1ZDz0iU1EulsIrF/VHgJhKR4EbYJCXMYb+E7zInLPS90I2KTsLHncUvkmKcjiaVtEkeECN6Fq4UXsAbrhWjMCBG6olMhKan3K4xpYJdQjkxqHhAnhQgcEfLOLlwvJMt2OJT42V+BxwJ8bmVk4YcTHu92MvhKYf3+ifPq49QRbhCEfBlj/LFqa3sltJGUfPYUmo9RuwLRIJwMeR0N4fwmJK9GThvqAamhgrn6k/7ZzG+FSMOVYix53lZg3yeEtq5lckxx4lyb2MyW8C3smEme1xU4X0r0CVzOZH6LFpJm3JE84yVGehDNZX5bwDdvj6RoaIpZbqQCouqt1ojkhW6zkO2PCn9rT2NcWN/P4vIuyNbBr63hOUItlP1/ntemcBDnRpIbEArIw8ILmcZxfCiUMBfUKWS9ZqkS2z7BxW1E7MAvbfxM4MG6hIxWFJEVUxSZ/eLL9zk8VYeQbtqBnHl2VBCR15ZFyJRwgZdiQPvl1JGQsuO3DvTjkczzY8LFXu3oVMgp4TZxDE/ijxLbuzPf763BX1tUWVpjLWPHSmzHM3bjNfgr4ltJSLpJN7aMHWzpz7bTGbvpGvxVFjIhX0zVN3g8Y9dtRLK+ojf79yV967BHKFN24/wS2x8y378tsBmI9PdNyTxn0RqRfYrfcpX2TMbncJe+nijhW9ixRcgD3Uw8qb48Mp6MryyEcLvXjZAXc+Z5SPXMPmfxlVQlIf06v10ZFarmPFSttfZF8i3tGMSnHYhoV/1u17zwLmoncH/B+MpCCFXsQe33zKSwnIoi0Yr0tPpA8//IRPK8R/lp2JGQFFuFZXEsmXA6IfCRcDptiRRQB7oSspKwgG+vq98lQ96F2H8pKmeRjcjosrHoHCvhzm0V/2/8C1AMyw8KHhUnAAAAAElFTkSuQmCC"
           />
           Mixtape
         </StyledLink>
-        <StyledLink to="/movies">
+        <StyledLink activeClassName="active" to="/movies">
           <img
             alt=""
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAAxklEQVRoge2ZwQ0CIRBF3xovtmE/WpM9WcJqGdrGHvEixhhiNIJ8Jv8lm5A5sDwYWBbAGPMJZyAN+swA010k1eyVDkzr18BTORViavHHAKwIQhiRMHMkzIhYRA2LqGERNSyiRiuRPXBtVPdbav8jAGyAA7A0qL/0vmYimS1wjCCS2QGXCCLQLt3+LpKpnW5xlt+MU+sLkeEn+/DLb4gPYss0Kor4FEUNi6hhETUsooZF1PDVmxphRMJtGk9dm/Ebc+8GGDMCN1Ze8rYjfSCSAAAAAElFTkSuQmCC"
           />
           Movies
         </StyledLink>
-        <StyledLink to="/">
+        <StyledLink activeClassName="active" to="/">
           <img
             alt=""
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAAGSElEQVR4nO2cW2wVRRjHf/ZAy8XCg0KoFpRIlICYKCkoYhQBLykVo4k3NAoWb29oTCCGF+MtxiiKRKKJPpAQY6KASBsi8YJRvFBADLal1BsmKveqFSzQ+vDNqaft7nR2Z3b3JJ1f8qXJduc//5lu98x+8+0Bj8fj8Xg8Ho/H4/F4PB6Px+MZ0JyRgOalwLXALOB8YBRwNtAGHAa+B7YDG4FdCfTfn7caYCowCTgLGAkcAg4CPwEfAR8DO1P2ZkQZsAj4FuiKEI1ALVCaoLdSYDHQFNHbLuA+Nbai4BpgH9EG0Tt+AOYm4O06pW3jrQW4OgFvxuSAFUAndgPJRyfwCjDIgbdBwErH3l5SY06VocA6C+O62KT04zIMqE/I27vAEAtvkcgBdQkNJB/vE+/KHgR8kLC3jUBJDG+Rec7ATAOwDKgCKoDB6uc0dbzBQOPFgj6vBN5APtDaVTQBrwMzCs5bkZK3Z2LNXATmor/vNQLzDLVq0K8EOoGFmN0G6tS5aXqbbagVmRywW9P5JmBERM0zgfc0mq4iCW97cPPB3YfFmk7XEf++VQKs12jbRpLeFsXU1fJNSGeNyF/fhnKgOUTfJpL29pWldh8mhXTUBVQ76mO+po+4kYa3KXEEhwGrgGMa4cLYbmW/Lzs0fR0HlgBjkFXCo+pYMXgrjKPAq/TzLLDaUCwfyxwP5glNX0sCzn+sSLwFxeowoRLgn4hiVY4HM13T15iA8yuKxFtQtBPyIRxnoiscD+ackH5OaNqcyNhb5ImG6LcO1+nN0pB+TmnanMrYW1i8phMbimS9jhqKpXXVtGna/Jmxt95xBMlCxkqMtYSITrPz3oew+2CLpk1rxt6+M2ls+sS0N+T4HMP2poQl/5s1bcJ+l5Y3oy0v04neFnL8VsP2ptwScvwLTZusvTnd95xC+D2pxlEfuqevyzTtpmXsbbKjPrr5MqSjJiQfYEM5cnsK0m80aB+Wi0ja2+eW2oHUhnTWhWS4bDJkGzTaDxloPJKRt4UxdbWUIjnYsE43EP3qKUe2rcI0WzHb7h8C/Jiyt93I7kwiXIV+F6MZuMlQaz761GgncGMEb/M0Wq69nabnFloimOzL7UCSMNORhX6p+nm5Or7TQOPlGN5WpeTthRjeIlMCvGNgxia2EO8RejDJlRrk421S2gUHuW8mNaB6YLiFt+HA5oS81ZFBiVgOeAp31UD524WLD5hSJPnuytdp4EkyqFQq5AZkrWszkFaiffCZUo197d0epIavKMgBd6Nf/gVFI7JOTvLfsQx4mOgXwx5gAY7ux0nUR1+IXEmzgYuA0UhNRRtSh9yE5C42I1VBaTIV+Q+8ApiI1G2PVN4OIku6LUgdiC5j6PF4PB6Px+MxYhbwFrK0yhectwJrgdvo+WSWU8fWqnPy57cAb5LxCz7FSgVmuZNmJD05g/Bdj8LYRHCF04BkLOElA0FxUoXp+fuAytRG4wjXhdeV2L+jaBItSM7ZJfc71utmHFLB5CoXW4YUcic9yfnYhrsysRxS2jzOkV4P1iCGXYmb7Ia4jpWOvI9Xemsc6XVTAfyrxO9xoHcn6U9yPlz4X6i0OoBzHeh1s5z/jdZZal0M/E02k9wF/IW8KmJD4Q7OckutHmylp9nrY+pUEm2FkVS0EP9KrO6ltTWmTiAHeon/ApwXUSOtFYZp7CX6ZI8Hfu2lcyCihpYO+hr9Hal/MGEO8sfJenJ7x8/Il7iYcDPwR4BGh2F7Iw5rzDYAjwMzkW+bKUPe7poA3IvsWGQ9of3Fh8rrBOW9TI1lphqbrtbjkMW89uGzIpiMYo1PTCbQ9OGj3vC8gYjTuRmNbGBmffUUWxxDbjFOeaAIBlZsUWs1oxqez3hgHcCDSC1I0EoozXjWci77ZQHmr8e5jO1IXUaeKszfz3YZR4C7LOYvEpXILobupXeXE3w7wXVvOeAOzL6exzaOqzE7zW2YMgpYilQeRUnG6+IUMnFPE+0rGi5RbRoIf5s2apxE3lNZilQ1xcZlSVg5sk83GbhAxVjkDdLhSFlYDlm9dCLJnd+QUqz9yFdpNgFfI2/D2jACeVtrIpJAGotcFBXKZwlSCnZa9dWOXLH7kVxMK1J796ny6fF4PB6Px+PxeDwej8fj8Xg8Hjv+A5ekosBuDv3UAAAAAElFTkSuQmCC"
