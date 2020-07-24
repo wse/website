@@ -1,0 +1,108 @@
+# Supports the following fields
+# - title: String
+# - authors: Array of strings
+# - links: Array of strings
+
+-
+  title: "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love"
+  authors:
+    - Cal Newport
+-
+  title: "Deep Work: Rules for Focused Success in a Distracted World"
+  authors:
+    - Cal Newport
+-
+  title: "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses"
+  authors:
+    - Eric Ries
+-
+  title: "Man's Search For Meaning: The classic tribute to hope from the Holocaust"
+  authors:
+    - Viktor E Frankl
+-
+  title: "Sapiens: A Brief History of Humankind"
+  authors:
+    - Yuval Noah Harari
+-
+  title: "Zero to One: Notes on Start Ups, or How to Build the Future"
+  authors:
+    - Blake Masters
+    - Peter Thiel
+-
+  title: "Hooked: How to Build Habit-Forming Products"
+  authors:
+    - Nir Eyal
+-
+  title: "ReWork: Change the Way You Work Forever"
+  authors:
+    - Jason Fried
+    - David Heinemeier Hansson
+-
+  title: "The Power of Habit: Why We Do What We Do, and How to Change"
+  authors:
+    - Charles Duhigg
+-
+  title: "An Astronaut's Guide to Life on Earth"
+  authors:
+    - Chris Hadfield
+-
+  title: "Steve Jobs: The Exclusive Biography"
+  authors:
+    - Walter Isaacson
+-
+  title: "Shoe Dog: A Memoir by the Creator of Nike"
+  authors:
+    - Phil Knight
+-
+  title: "Jobs to Be Done: A Roadmap for Customer-Centered Innovation"
+  authors:
+    - Stephen Wunker
+    - Jessica Wattman
+    - David Farber
+-
+  title: "Head First Design Patterns: A Brain-Friendly Guide"
+  authors:
+    - Eric Freeman
+    - Elisabeth Robson
+    - Bert Bates
+    - Kathy Sierra
+-
+  title: "Software Estimation: Demystifying the Black Art (Developer Best Practices)"
+  authors:
+    - Steve McConnell
+-
+  title: "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
+  authors:
+    - Martin Kleppmann
+-
+  title: "Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration"
+  authors:
+    - Ed Catmull
+-
+  title: "ShapeUp"
+  authors:
+    - Ryan Singer
+  links:
+    - "https://basecamp.com/shapeup"
+-
+  title: "Learning PostgreSQL 10"
+  authors:
+    - Salahaldin Juba
+    - Andrey Volkov
+-
+  title: "Refactoring UI"
+  authors:
+    - Adam Wathan
+    - Steve Schoger
+  links:
+    - "https://refactoringui.com/book/"
+-
+  title: "Learn Vimscript the Hard Way"
+  authors:
+    - Steve Losh
+  links:
+    - "http://learnvimscriptthehardway.stevelosh.com/"
+-
+  title: "Practical Vim: Edit Text at the Speed of Thought"
+  authors:
+    - Drew Neil

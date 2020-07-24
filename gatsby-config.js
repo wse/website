@@ -23,8 +23,16 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `wiki`,
+        path: `${__dirname}/src/wiki`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
