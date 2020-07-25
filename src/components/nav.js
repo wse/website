@@ -63,6 +63,11 @@ const StyledLink = styled(Link)`
   &.active {
     background: #eaeaea;
   }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `
 
 const StyledAnchor = styled.a`

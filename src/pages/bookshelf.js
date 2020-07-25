@@ -15,6 +15,7 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
+  text-transform: capitalize;
 `
 
 const AuthorBlock = styled.div`
@@ -25,9 +26,10 @@ const AuthorBlock = styled.div`
 const Author = styled.div`
   font-weight: bold;
   font-size: 12px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 8px 0;
   margin-right: 12px;
+  color: #6d6d6d;
 `
 
 const StyledLinkIcon = styled.img`
