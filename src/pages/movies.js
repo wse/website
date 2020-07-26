@@ -7,6 +7,7 @@ const Movies = () => (
   <Layout>
     <Seo title="Movies" />
     <PageHeader title="Movies" />
+    Under Construction...
   </Layout>
 )
 

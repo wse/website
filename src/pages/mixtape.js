@@ -7,6 +7,7 @@ const Mixtape = () => (
   <Layout>
     <Seo title="Mixtape" />
     <PageHeader title="Mixtape" />
+    Under Construction...
   </Layout>
 )
 

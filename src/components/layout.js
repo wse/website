@@ -20,7 +20,6 @@ const Layout = ({ children }) => (
   <MainContainer>
     <Nav />
     <ContentContainer>{children}</ContentContainer>
-    <Nav />
   </MainContainer>
 )
 
