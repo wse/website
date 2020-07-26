@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import Seo from '../components/seo'
 
 const Container = styled.ul``
 
@@ -50,6 +51,7 @@ const Bookshelf = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title="Bookshelf" />
       <PageHeader title="Bookshelf" />
       <Container>
         {books &&

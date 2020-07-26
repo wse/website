@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import PageHeader from '../components/page-header'
 import styled from 'styled-components'
+import Seo from '../components/seo'
 
 const Post = styled.li`
   padding-bottom: 24px;
@@ -65,6 +66,7 @@ const Blog = function ({ data }) {
 
   return (
     <Layout>
+      <Seo title="Blog Posts" />
       <PageHeader title="Blog Posts" />
       <ul>
         {posts &&

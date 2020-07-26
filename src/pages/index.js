@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import HeroImage from '../components/hero-image'
 import PageHeader from '../components/page-header'
 import styled from 'styled-components'
@@ -26,6 +27,7 @@ const Text = styled.p`
 
 const IndexPage = () => (
   <Layout>
+    <Seo title="About" />
     <PageHeader title="About Me" />
     <ContentContainer>
       <Text>I’m Nishant Dania, a software developer based in Singapore.</Text>

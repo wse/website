@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import PageHeader from '../components/page-header'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const DateContainer = styled.div`
   padding-top: 20px;
@@ -91,6 +92,7 @@ export default function Template({
 
   return (
     <Layout>
+      <Seo title={title} />
       <PageHeader title={title} alwaysShow />
       <DateContainer>
         <div>Published on</div>
