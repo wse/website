@@ -24,7 +24,7 @@ const Content = styled.div`
   h1 {
     font-weight: bold;
     font-size: 20px;
-    padding-bottom: 16px;
+    padding-bottom: 8px;
     padding-top: 40px;
   }
 
@@ -44,7 +44,7 @@ const Content = styled.div`
   }
 
   p {
-    padding-bottom: 16px;
+    padding-top: 16px;
   }
 
   hr {
@@ -80,6 +80,24 @@ const Content = styled.div`
   a {
     color: black;
     text-decoration: underline;
+  }
+
+  code {
+    background: #efefef;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  pre {
+    font-family: monospace;
+    font-size: 14px;
+    background: #efefef;
+    padding: 24px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    margin: 8px 0;
+    overflow: scroll;
   }
 `
 
