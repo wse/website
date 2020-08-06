@@ -17,6 +17,7 @@ const NavContainer = styled.div`
   img {
     box-sizing: content-box;
     width: 16px;
+    height: 16px;
     padding: 0 8px;
   }
 `
@@ -85,6 +86,7 @@ const StyledAnchor = styled.a`
 
   img {
     width: 12px;
+    height: 12px;
   }
 
   :hover {
