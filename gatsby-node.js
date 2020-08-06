@@ -5,10 +5,14 @@
  */
 
 // You can delete this file if you're not using it
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage, deletePage } = actions
 
   const blogPostTemplate = require.resolve(`./src/templates/post.js`)
+  const blogPostSocialImageTemplate = require.resolve(
+    `./src/templates/post-social-image.js`,
+  )
 
   return graphql(`
     {
@@ -30,7 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    return result.data.allMarkdownRemark.edges.forEach(async ({ node }) => {
       createPage({
         path: node.frontmatter.slug,
         component: blogPostTemplate,
@@ -39,6 +43,17 @@ exports.createPages = ({ actions, graphql }) => {
           slug: node.frontmatter.slug,
         },
       })
+
+      if (process.env.NODE_ENV === 'development') {
+        createPage({
+          path: `${node.frontmatter.slug}/seo`,
+          component: blogPostSocialImageTemplate,
+          context: {
+            // additional data can be passed via context
+            slug: node.frontmatter.slug,
+          },
+        })
+      }
     })
   })
 }
