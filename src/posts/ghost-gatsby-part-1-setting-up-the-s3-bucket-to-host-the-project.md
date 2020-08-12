@@ -25,6 +25,8 @@ Click `Next`. You don't need to edit anything in the second screen. Click `Next`
 
 Grant public access by removing all the restrictions as shown:
 
+![](../images/posts/create-bucket.png)
+
 Click `Next` and then `Create Bucket`.
 
 Click on the bucket you just created to enter its settings.
@@ -32,6 +34,8 @@ Click on the bucket you just created to enter its settings.
 Click on the `Properties` tab on the top and then click on `Static website hosting`.
 
 Choose the `Use this bucket to host a website` option, type `index.html` in the Index Document field, note down the endpoint for later and click `Save`:
+
+![](../images/posts/static-hosting.png)
 
 Click on the `Permissions` tab and then on `Bucket Policy` and type the following policy (Replace the `aotd.co` with your domain name):
 
@@ -52,6 +56,8 @@ Click on the `Permissions` tab and then on `Bucket Policy` and type the followin
 
 Click `Save`:
 
+![](../images/posts/bucket-policy.png)
+
 That's it. You now have an S3 bucket setup to serve public files. Lets add SSL to this domain with CloudFront and Certificate Manager.
 
 # Create an SSL certificate for https
@@ -65,6 +71,8 @@ Choose `Request a public certificate`.
 Click `Request a certificate`.
 
 Enter your domain name and click `Add another name to this certificate`.
+
+![](../images/posts/request-aws-cert.png)
 
 Enter ASTERISK.YOUR_DOMAIN (e.g \*.aotd.co).
 
