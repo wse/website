@@ -39,11 +39,12 @@ const Artists = styled.div`
   line-height: 16px;
 `
 
-const StyledSpotifyLink = styled.a`
+const StyledAudioLink = styled.a`
   font-size: 12px;
   text-decoration: underline;
   text-transform: capitalize;
   padding: 8px 0;
+  margin-right: 8px;
 `
 
 const Mixtape = ({ data }) => {
@@ -67,13 +68,20 @@ const Mixtape = ({ data }) => {
                 <Song key={Spotify_ID}>
                   <SongName>{Song_Name}</SongName>
                   <Artists>{Artist_Name_s_}</Artists>
-                  <StyledSpotifyLink
+                  <StyledAudioLink
                     target="_blank"
                     rel="noreferrer"
                     href={`spotify:track:${Spotify_ID}`}
                   >
                     Spotify
-                  </StyledSpotifyLink>
+                  </StyledAudioLink>
+                  <StyledAudioLink
+                    target="_blank"
+                    rel="noreferrer"
+                    href={`https://www.youtube.com/results?search_query=${Artist_Name_s_}+${Song_Name}`}
+                  >
+                    Youtube
+                  </StyledAudioLink>
                 </Song>
               )
             },
