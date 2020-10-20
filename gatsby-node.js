@@ -1,58 +1,59 @@
-const _ = require(`lodash`);
-const Promise = require(`bluebird`);
-const path = require(`path`);
-const config = require(`./src/utils/siteConfig`);
-const { paginate } = require(`gatsby-awesome-pagination`);
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+// You can delete this file if you're not using it
 
-  /**
-   * Posts
-   */
-  const createPosts = new Promise((resolve, reject) => {
-    const postTemplate = path.resolve(`./src/templates/post.js`);
-    resolve(
-      graphql(`
-        {
-          allGhostPost(
-            sort: { order: ASC, fields: published_at }
-          ) {
-            edges {
-              node {
-                slug
-                primary_tag {
-                  name
-                }
-              }
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage, deletePage } = actions
+
+  const blogPostTemplate = require.resolve(`./src/templates/post.js`)
+  const blogPostSocialImageTemplate = require.resolve(
+    `./src/templates/post-social-image.js`,
+  )
+
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
             }
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          return reject(result.errors);
-        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
 
-        if (!result.data.allGhostPost) {
-          return resolve();
-        }
-
-        const items = result.data.allGhostPost.edges;
-
-        _.forEach(items, ({ node }) => {
-          createPage({
-            path: `/blog/${node.slug}/`,
-            component: path.resolve(postTemplate),
-            context: {
-              slug: node.slug,
-            },
-          });
-        });
-
-        return resolve();
+    return result.data.allMarkdownRemark.edges.forEach(async ({ node }) => {
+      createPage({
+        path: node.frontmatter.slug,
+        component: blogPostTemplate,
+        context: {
+          // additional data can be passed via context
+          slug: node.frontmatter.slug,
+        },
       })
-    );
-  });
 
-  return Promise.all([createPosts]);
-};
+      if (process.env.NODE_ENV === 'development') {
+        createPage({
+          path: `${node.frontmatter.slug}/seo`,
+          component: blogPostSocialImageTemplate,
+          context: {
+            // additional data can be passed via context
+            slug: node.frontmatter.slug,
+          },
+        })
+      }
+    })
+  })
+}

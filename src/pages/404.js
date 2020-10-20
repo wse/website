@@ -1,10 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-const NotFoundPage = () => (
-  <div>
-    Page not found, <Link to="/">return home</Link> to start over
-  </div>
-)
+const NotFoundPage = () => <h1>NOT FOUND</h1>
 
 export default NotFoundPage

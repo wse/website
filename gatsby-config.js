@@ -1,44 +1,14 @@
-const path = require(`path`);
-
-const config = require(`./src/utils/siteConfig`);
-const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
-
-let ghostConfig;
-
-try {
-  ghostConfig = require(`./.ghost`);
-} catch (e) {
-  ghostConfig = {
-    production: {
-      apiUrl: process.env.GHOST_API_URL,
-      contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-    },
-  };
-} finally {
-  const { apiUrl, contentApiKey } =
-    process.env.NODE_ENV === `development`
-      ? ghostConfig.development
-      : ghostConfig.production;
-
-  if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-    throw new Error(
-      `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
-    ); // eslint-disable-line
-  }
-}
-
-/**
- * This is the place where you can tell Gatsby which plugins to use
- * and set them up the way you want.
- *
- * Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
- *
- */
 module.exports = {
   siteMetadata: {
-    siteUrl: config.siteUrl,
+    title: `Nishant Dania`,
+    description: `Personal website of Nishant Dania. Technology, programming and life in general`,
+    author: `@nishantdania`,
+    siteUrl: `https://nishantdania.com`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,85 +19,63 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GA_TRACKING_URL || "",
+        trackingId: process.env.GA_TRACKING_URL || '',
         head: true,
       },
     },
-    /**
-     *  Content Plugins
-     */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: path.join(__dirname, `src`, `pages`),
-        name: `pages`,
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
-    // Setup for optimised images.
-    // See https://www.gatsbyjs.org/packages/gatsby-image/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: path.join(__dirname, `src`, `images`),
-        name: `images`,
+        name: `wiki`,
+        path: `${__dirname}/src/wiki`,
       },
     },
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-ghost`,
-      options:
-        process.env.NODE_ENV === `development`
-          ? ghostConfig.development
-          : ghostConfig.production,
-    },
-    /**
-     *  Utility Plugins
-     */
-    {
-      resolve: `gatsby-plugin-ghost-manifest`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        short_name: config.shortTitle,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 650,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-transformer-yaml`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Nishant Dania`,
+        short_name: `nishant`,
         start_url: `/`,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-remark-images`,
       options: {
-        query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
-        feeds: [generateRSSFeed(config)],
+        maxWidth: 500,
       },
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-force-trailing-slashes`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-remove-serviceworker`,
-    `gatsby-plugin-offline`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
-};
+}

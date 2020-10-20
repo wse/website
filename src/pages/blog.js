@@ -1,82 +1,114 @@
-import React from 'react';
-import {graphql} from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Layout from '../components/layout'
+import PageHeader from '../components/page-header'
+import styled from 'styled-components'
+import Seo from '../components/seo'
 
-import PostLink from '../components/post-link';
-import Nav from '../components/nav';
-import Footer from '../components/footer';
-import '../components/layout.css';
-import VimTraining from '../components/vimtraining'
-import {MetaData} from '../components/common/meta';
+const Post = styled.li`
+  padding-bottom: 24px;
 
-const Container = styled.div`
-  max-width: 750px;
-  margin: auto;
-`;
-
-const PageDescription = styled.h1`
-  line-height: 2rem;
-  margin: 4rem 1rem;
-
-  @media (max-width: 800px) {
-    margin: 4rem 2rem;
+  @media (max-width: 650px) {
+    padding: 24px 0;
   }
-`;
+`
 
-const PostsContainer = styled.ul`
-  margin: 2rem 1rem;
-  margin-bottom: 6rem;
+const DateContainer = styled.div`
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+`
 
-  @media (max-width: 800px) {
-    margin: 2rem;
-    margin-bottom: 5rem;
-  }
-`;
+const Excerpt = styled.div`
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 32px;
+  position: relative;
 
-const BlogListItem = styled.li`
-  display: block;
-  margin: 2rem 0rem;
-`;
-
-const BlogPage = ({data, location}) => {
-  const posts = data.allGhostPost.edges;
-
-  const Posts = posts.map(post => {
-    let link = `/blog/${post.node.slug}`;
-    return (
-      <BlogListItem key={post.node.id}>
-        <PostLink link={link} key={post.node.id} post={post.node} />
-      </BlogListItem>
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 95%
     );
-  });
+  }
+`
+
+const Read = styled.div`
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+`
+
+const StyledLink = styled(Link)`
+  display: block;
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    .blog-title {
+      text-decoration: underline;
+    }
+  }
+`
+
+const Blog = function ({ data }) {
+  const { allMarkdownRemark } = data
+  const posts = allMarkdownRemark.edges
+
   return (
-    <Container>
-      <MetaData location={location} data={data} title="Blog" />
-      <Nav />
-      <VimTraining />
-      <PageDescription>Blog Posts</PageDescription>
-      <PostsContainer>{Posts}</PostsContainer>
-      <Footer />
-    </Container>
-  );
-};
+    <Layout>
+      <Seo title="Blog Posts" />
+      <PageHeader title="Blog Posts" />
+      <ul>
+        {posts &&
+          posts.map(edge => {
+            const { excerpt, frontmatter, id } = edge.node
+            return (
+              <Post key={id}>
+                <StyledLink to={frontmatter.slug}>
+                  <PageHeader
+                    title={frontmatter.title}
+                    showDivider={false}
+                    alwaysShow={true}
+                    className="blog-title"
+                  />
+                  <DateContainer>{frontmatter.date}</DateContainer>
+                  <Excerpt>{excerpt}</Excerpt>
+                  <Read>Read On &rarr;</Read>
+                </StyledLink>
+              </Post>
+            )
+          })}
+      </ul>
+    </Layout>
+  )
+}
 
-export default BlogPage;
-
-export const pageQuery = graphql`
-  query {
-    allGhostPost(sort: {order: DESC, fields: published_at}) {
+export const query = graphql`
+  query BlogPageQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
           id
-          slug
-          title
-          primary_tag {
-            name
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            slug
           }
-          published_at(formatString: "DD MMMM, YYYY")
+          excerpt(pruneLength: 200)
         }
       }
     }
   }
-`;
+`
+
+export default Blog

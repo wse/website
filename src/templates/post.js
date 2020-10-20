@@ -1,99 +1,135 @@
-import React from 'react';
-import {graphql} from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import PageHeader from '../components/page-header'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
-import Nav from '../components/nav';
-import VimTraining from '../components/vimtraining'
-import Footer from '../components/footer';
-import '../components/layout.css';
-import {MetaData} from '../components/common/meta';
+const DateContainer = styled.div`
+  padding-top: 20px;
+  padding-bottom: 48px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
 
-const Container = styled.div`
-  max-width: 750px;
-  margin: auto;
-`;
-
-const Header = styled.div`
-  margin: 4rem 1rem;
-  margin-bottom: 3rem;
-
-  @media (max-width: 800px) {
-    margin: 4rem 2rem;
-    margin-bottom: 2rem;
+  div {
+    font-weight: normal;
+    padding: 8px 0;
   }
-`;
-
-const Title = styled.h1``;
+`
 
 const Content = styled.div`
-  margin: 2rem 1rem;
-  margin-bottom: 4rem;
-  font-family: serif;
-  line-height: 1.5rem;
+  line-height: 32px;
 
-  a {
-    text-decoration: underline;
-    color: #000;
+  h1 {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 8px;
+    padding-top: 40px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 8px;
+    padding-top: 20px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
   }
 
   p {
-    padding-bottom: 1rem;
+    padding-top: 16px;
   }
 
-  h1,
-  h2,
-  h3 {
-    padding: 1rem 0;
+  hr {
+    margin-bottom: 32px;
+    margin-top: 16px;
+    border-top: 1px solid #efefef;
   }
 
-  @media (max-width: 800px) {
-    margin: 2rem;
-    font-size: 1.2rem;
-    line-height: 2rem;
-  }
-`;
-
-const Date = styled.div`
-  color: #a2a2a2;
-  font-size: 0.7rem;
-  display: inline-block;
-`;
-
-const Tag = styled.div`
-  display: inline-block;
-  color: #a2a2a2;
-  font-size: 0.7rem;
-  margin: 0 1rem;
-`;
-
-export default function Post({
-  data, // this prop will be injected by the GraphQL query below.
-  location,
-}) {
-  const post = data.ghostPost; // data.markdownRemark holds our post data
-  const {title, html} = post;
-
-  return (
-    <Container>
-      <MetaData location={location} data={data} />
-      <Nav />
-      <VimTraining />
-      <Header>
-        <Title>{title}</Title>
-        <Date>{post.published_at_pretty}</Date>
-        <Tag>{post.primary_tag && post.primary_tag.name}</Tag>
-      </Header>
-      <Content dangerouslySetInnerHTML={{__html: html}} />
-      <VimTraining />
-      <Footer />
-    </Container>
-  );
-}
-
-export const query = graphql`
-  query($slug: String!) {
-    ghostPost(slug: {eq: $slug}) {
-      ...GhostPostFields
+  ul {
+    counter-reset: item;
+    li {
+      padding: 32px 0;
+      border-bottom: 1px solid #efefef;
+      :before {
+        counter-increment: item;
+        content: counter(item) '.';
+        padding: 16px 0;
+        padding-right: 16px;
+        font-weight: bold;
+        display: none;
+      }
     }
   }
-`;
+
+  ol {
+    list-style: none;
+    li {
+      padding: 32px 0;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  code {
+    background: #efefef;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  pre {
+    font-family: monospace;
+    font-size: 14px;
+    background: #efefef;
+    padding: 24px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    margin: 8px 0;
+    overflow: scroll;
+  }
+`
+
+export default function Template({
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const { markdownRemark } = data // data.markdownRemark holds our post data
+  const { frontmatter, html } = markdownRemark
+  const { title, date } = frontmatter
+
+  return (
+    <Layout>
+      <Seo title={title} />
+      <PageHeader title={title} alwaysShow />
+      <DateContainer>
+        <div>Published on</div>
+        {date}
+      </DateContainer>
+      <Content dangerouslySetInnerHTML={{ __html: html }} />
+    </Layout>
+  )
+}
+
+export const pageQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        slug
+        title
+      }
+    }
+  }
+`
